@@ -1,6 +1,22 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+
+const NAV_LINKS = [
+  { label: 'Languages', href: '/#languages' },
+  { label: 'Exams',     href: '/#how-it-works' },
+  { label: 'Books',     href: '/#languages' },
+]
 
 const Navbar = () => {
+  const location = useLocation()
+
+  const handleNavClick = (e, href) => {
+    const [path, hash] = href.split('#')
+    if (location.pathname === '/' && hash) {
+      e.preventDefault()
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <header style={{
       position: 'sticky', top: 0, zIndex: 50,
@@ -21,20 +37,23 @@ const Navbar = () => {
 
         {/* Nav links */}
         <div style={{ display: 'flex', gap: 'var(--space-lg)', alignItems: 'center' }}>
-          {['Languages', 'Exams', 'Books'].map((item) => (
-            <NavLink
-              key={item}
-              to={`/${item.toLowerCase()}`}
-              style={({ isActive }) => ({
+          {NAV_LINKS.map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              onClick={(e) => handleNavClick(e, href)}
+              style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                fontWeight: 500,
-                color: isActive ? 'var(--color-brand)' : 'var(--color-text-secondary)',
+                fontSize: '14px', fontWeight: 500,
+                color: 'var(--color-text-secondary)',
                 transition: 'color 0.15s',
-              })}
+                textDecoration: 'none',
+              }}
+              onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand)'}
+              onMouseLeave={e => e.currentTarget.style.color = 'var(--color-text-secondary)'}
             >
-              {item}
-            </NavLink>
+              {label}
+            </a>
           ))}
         </div>
 
@@ -45,7 +64,10 @@ const Navbar = () => {
           background: 'var(--color-brand)', color: '#fff',
           padding: '8px 16px', borderRadius: 'var(--radius-sm)',
           transition: 'opacity 0.15s',
-        }}>
+        }}
+        onMouseEnter={e => e.currentTarget.style.opacity = '0.88'}
+        onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+        >
           Get started
         </Link>
       </nav>
