@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
 
 const SignUp = () => {
@@ -7,7 +7,7 @@ const SignUp = () => {
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
+  const [confirmed, setConfirmed] = useState(false)
 
   const handleSignUp = async (e) => {
     e.preventDefault()
@@ -20,8 +20,48 @@ const SignUp = () => {
       setError(error.message)
       setLoading(false)
     } else {
-      navigate('/')
+      setConfirmed(true)
     }
+  }
+
+  if (confirmed) {
+    return (
+      <div style={{
+        minHeight: '80vh', display: 'flex',
+        alignItems: 'center', justifyContent: 'center',
+        padding: 'var(--space-lg)',
+      }}>
+        <div style={{
+          width: '100%', maxWidth: '400px',
+          background: 'var(--color-surface)',
+          border: '1px solid var(--color-border)',
+          borderRadius: 'var(--radius-lg)',
+          padding: 'var(--space-xl)',
+          textAlign: 'center',
+        }}>
+          <div style={{ fontSize: '48px', marginBottom: 'var(--space-md)' }}>📬</div>
+          <h2 style={{
+            fontFamily: 'var(--font-display)', fontSize: '22px',
+            fontWeight: 700, marginBottom: '8px',
+          }}>
+            Check your email
+          </h2>
+          <p style={{
+            fontFamily: 'var(--font-body)', fontSize: '14px',
+            color: 'var(--color-text-secondary)', lineHeight: 1.7,
+            marginBottom: 'var(--space-lg)',
+          }}>
+            We sent a confirmation link to <strong>{email}</strong>. Click it to activate your account and start tracking your progress.
+          </p>
+          <Link to="/login" style={{
+            fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600,
+            color: 'var(--color-brand)',
+          }}>
+            Back to login
+          </Link>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -73,7 +113,7 @@ const SignUp = () => {
             <input
               type="email"
               value={email}
-              onChange={e => setEmail(e.target.value)}
+              onChange={function(e) { setEmail(e.target.value) }}
               placeholder="you@example.com"
               style={{
                 width: '100%', padding: '10px 14px',
@@ -98,7 +138,7 @@ const SignUp = () => {
             <input
               type="password"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={function(e) { setPassword(e.target.value) }}
               placeholder="Min. 6 characters"
               style={{
                 width: '100%', padding: '10px 14px',
