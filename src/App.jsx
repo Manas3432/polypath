@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import LanguageOverview from './pages/language/LanguageOverview'
 import Roadmap from './pages/language/Roadmap'
 import ExamGuide from './pages/exam/ExamGuide'
+import SignUp from './pages/auth/SignUp'
+import Login from './pages/auth/Login'
 import NotFound from './pages/NotFound'
 
 const App = () => {
@@ -18,6 +20,8 @@ const App = () => {
             <Route path="/languages/:languageId" element={<LanguageOverview />} />
             <Route path="/languages/:languageId/roadmap" element={<Roadmap />} />
             <Route path="/exams/:examId" element={<ExamGuide />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
