@@ -8,6 +8,7 @@ import ExamGuide from './pages/exam/ExamGuide'
 import SignUp from './pages/auth/SignUp'
 import Login from './pages/auth/Login'
 import NotFound from './pages/NotFound'
+import Dashboard from './pages/dashboard/Dashboard'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </main>
         <Footer />

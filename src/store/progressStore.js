@@ -12,7 +12,12 @@ const useProgressStore = create((set, get) => ({
       .eq('language_id', languageId)
 
     if (!error) {
-      set({ progress: data })
+      set((state) => ({
+        progress: [
+          ...state.progress.filter(p => p.language_id !== languageId),
+          ...data,
+        ]
+      }))
     }
   },
 

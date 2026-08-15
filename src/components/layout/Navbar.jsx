@@ -69,9 +69,9 @@ const Navbar = () => {
 
         {user ? (
           <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-md)' }}>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'var(--color-text-secondary)' }}>
-              {user.email}
-            </span>
+            <Link to="/dashboard" style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'var(--color-brand)', fontWeight: 500 }}>
+  {user.email}
+</Link>
             <button
               onClick={handleSignOut}
               style={{
