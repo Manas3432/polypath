@@ -11,6 +11,7 @@ import NotFound from './pages/NotFound'
 import Dashboard from './pages/dashboard/Dashboard'
 import { AnimatePresence } from 'framer-motion'
 import AnimatedPage from './components/AnimatedPage'
+import Books from './pages/Books'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
     <Route path="/login" element={<AnimatedPage><Login /></AnimatedPage>} />
     <Route path="/dashboard" element={<AnimatedPage><Dashboard /></AnimatedPage>} />
     <Route path="*" element={<AnimatedPage><NotFound /></AnimatedPage>} />
+    <Route path="/books" element={<AnimatedPage><Books /></AnimatedPage>} />
   </Routes>
 </AnimatePresence>
         </main>

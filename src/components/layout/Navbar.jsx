@@ -4,7 +4,7 @@ import useAuthStore from '../../store/authStore'
 const NAV_LINKS = [
   { label: 'Languages', href: '/#languages' },
   { label: 'Exams', href: '/#how-it-works' },
-  { label: 'Books', href: '/#languages' },
+  { label: 'Books', href: '/books' },
 ]
 
 const Navbar = () => {
