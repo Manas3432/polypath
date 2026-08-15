@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { BOOKS } from '../data/books'
 import { LANGUAGES } from '../data/languages'
 
@@ -15,7 +14,7 @@ const BookCard = ({ book }) => {
     }}
     onMouseEnter={function(e) {
       e.currentTarget.style.transform = 'translateY(-3px)'
-      e.currentTarget.style.boxShadow = `0 8px 24px ${book.color}18`
+      e.currentTarget.style.boxShadow = '0 8px 24px ' + book.color + '18'
       e.currentTarget.style.borderColor = book.color
     }}
     onMouseLeave={function(e) {
@@ -24,7 +23,6 @@ const BookCard = ({ book }) => {
       e.currentTarget.style.borderColor = 'var(--color-border)'
     }}
     >
-      {/* Tag + Level */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{
           fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600,
@@ -41,7 +39,6 @@ const BookCard = ({ book }) => {
         </span>
       </div>
 
-      {/* Title + Author */}
       <div>
         <h3 style={{
           fontFamily: 'var(--font-display)', fontSize: '16px', fontWeight: 700,
@@ -57,7 +54,6 @@ const BookCard = ({ book }) => {
         </p>
       </div>
 
-      {/* Description */}
       <p style={{
         fontFamily: 'var(--font-body)', fontSize: '13px',
         color: 'var(--color-text-secondary)', lineHeight: 1.6, flex: 1,
@@ -65,30 +61,43 @@ const BookCard = ({ book }) => {
         {book.description}
       </p>
 
-      {/* Price + Buy */}
       <div style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        display: 'flex', gap: '8px',
         paddingTop: 'var(--space-md)', borderTop: '1px solid var(--color-border)',
         marginTop: 'auto',
       }}>
-        <span style={{
-          fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700,
-          color: 'var(--color-text-primary)',
-        }}>
-          ₹{book.price}
-        </span>
-        <button style={{
-          fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600,
-          background: book.color, color: '#fff',
-          padding: '8px 18px', borderRadius: 'var(--radius-md)',
-          border: 'none', cursor: 'pointer', transition: 'opacity 0.15s',
-        }}
-        onMouseEnter={function(e) { e.currentTarget.style.opacity = '0.88' }}
-        onMouseLeave={function(e) { e.currentTarget.style.opacity = '1' }}
-        onClick={function() { alert('Razorpay payments coming soon!') }}
+        <a
+          href={'https://www.amazon.in/s?k=' + encodeURIComponent(book.title)}
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 600,
+            background: book.colorDim, color: book.colorText,
+            padding: '7px 12px', borderRadius: 'var(--radius-md)',
+            display: 'inline-block', transition: 'opacity 0.15s',
+            textDecoration: 'none', border: '1px solid ' + book.color + '44',
+          }}
+          onMouseEnter={function(e) { e.currentTarget.style.opacity = '0.8' }}
+          onMouseLeave={function(e) { e.currentTarget.style.opacity = '1' }}
         >
-          Buy now
-        </button>
+          Amazon
+        </a>
+        <a
+          href={'https://www.flipkart.com/search?q=' + encodeURIComponent(book.title)}
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 600,
+            background: book.colorDim, color: book.colorText,
+            padding: '7px 12px', borderRadius: 'var(--radius-md)',
+            display: 'inline-block', transition: 'opacity 0.15s',
+            textDecoration: 'none', border: '1px solid ' + book.color + '44',
+          }}
+          onMouseEnter={function(e) { e.currentTarget.style.opacity = '0.8' }}
+          onMouseLeave={function(e) { e.currentTarget.style.opacity = '1' }}
+        >
+          Flipkart
+        </a>
       </div>
     </div>
   )
@@ -99,11 +108,10 @@ const Books = () => {
 
   const filteredBooks = activeLanguage === 'all'
     ? BOOKS
-    : BOOKS.filter(b => b.language === activeLanguage)
+    : BOOKS.filter(function(b) { return b.language === activeLanguage })
 
   return (
     <div>
-      {/* Header */}
       <div style={{
         borderBottom: '1px solid var(--color-border)',
         background: 'var(--color-surface)',
@@ -122,7 +130,6 @@ const Books = () => {
             Handpicked books for every language and level. From beginner guides to exam prep.
           </p>
 
-          {/* Language filter */}
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
             <button
               onClick={function() { setActiveLanguage('all') }}
@@ -137,27 +144,28 @@ const Books = () => {
             >
               All
             </button>
-            {LANGUAGES.map(lang => (
-              <button
-                key={lang.id}
-                onClick={function() { setActiveLanguage(lang.id) }}
-                style={{
-                  fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
-                  padding: '6px 16px', borderRadius: '20px', cursor: 'pointer',
-                  border: `1px solid ${activeLanguage === lang.id ? lang.color : 'var(--color-border)'}`,
-                  background: activeLanguage === lang.id ? lang.colorDim : 'var(--color-surface)',
-                  color: activeLanguage === lang.id ? lang.colorText : 'var(--color-text-secondary)',
-                  transition: 'all 0.15s',
-                }}
-              >
-                {lang.flag} {lang.name}
-              </button>
-            ))}
+            {LANGUAGES.map(function(lang) {
+              return (
+                <button
+                  key={lang.id}
+                  onClick={function() { setActiveLanguage(lang.id) }}
+                  style={{
+                    fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
+                    padding: '6px 16px', borderRadius: '20px', cursor: 'pointer',
+                    border: '1px solid ' + (activeLanguage === lang.id ? lang.color : 'var(--color-border)'),
+                    background: activeLanguage === lang.id ? lang.colorDim : 'var(--color-surface)',
+                    color: activeLanguage === lang.id ? lang.colorText : 'var(--color-text-secondary)',
+                    transition: 'all 0.15s',
+                  }}
+                >
+                  {lang.flag} {lang.name}
+                </button>
+              )
+            })}
           </div>
         </div>
       </div>
 
-      {/* Books grid */}
       <div style={{ maxWidth: '1120px', margin: '0 auto', padding: 'var(--space-xl) var(--space-lg)' }}>
         <p style={{
           fontFamily: 'var(--font-body)', fontSize: '13px',
@@ -170,9 +178,9 @@ const Books = () => {
           gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
           gap: 'var(--space-md)',
         }}>
-          {filteredBooks.map(book => (
-            <BookCard key={book.id} book={book} />
-          ))}
+          {filteredBooks.map(function(book) {
+            return <BookCard key={book.id} book={book} />
+          })}
         </div>
       </div>
     </div>

@@ -34,17 +34,21 @@ const Navbar = () => {
       borderBottom: '1px solid var(--color-border)',
     }}>
       <nav style={{
-        maxWidth: '1120px', margin: '0 auto',
-        padding: '0 var(--space-lg)',
-        height: '60px',
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      }}>
+  maxWidth: '1120px', margin: '0 auto',
+  padding: '0 var(--space-lg)',
+  height: '60px',
+  position: 'relative',
+  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+}}>
 
         <Link to="/" style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, letterSpacing: '-0.4px' }}>
           Poly<span style={{ color: 'var(--color-brand)' }}>path</span>
         </Link>
 
-        <div style={{ display: 'flex', gap: 'var(--space-lg)', alignItems: 'center' }}>
+        <div style={{ 
+  display: 'flex', gap: 'var(--space-lg)', alignItems: 'center',
+  position: 'absolute', left: '50%', transform: 'translateX(-50%)',
+}}>
           {NAV_LINKS.map(function(item) {
             return (
               <a
@@ -69,8 +73,15 @@ const Navbar = () => {
 
         {user ? (
           <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-md)' }}>
-            <Link to="/dashboard" style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'var(--color-brand)', fontWeight: 500 }}>
-  {user.email}
+            <Link to="/dashboard" style={{ 
+  fontFamily: 'var(--font-body)', fontSize: '13px', 
+  color: 'var(--color-brand)', fontWeight: 500,
+  maxWidth: '160px',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+}}>
+  {user.email.split('@')[0]}
 </Link>
             <button
               onClick={handleSignOut}
