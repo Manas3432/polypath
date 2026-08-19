@@ -11,7 +11,7 @@ const Footer = () => {
         maxWidth: '1120px', margin: '0 auto',
         padding: 'var(--space-xl) var(--space-lg)',
         display: 'grid',
-        gridTemplateColumns: '2fr 1fr 1fr 1fr',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
         gap: 'var(--space-xl)',
       }}>
 
