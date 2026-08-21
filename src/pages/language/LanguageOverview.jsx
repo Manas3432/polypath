@@ -1,11 +1,12 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getLanguageById } from '../../data/languages'
 import { ROADMAPS } from '../../data/roadmaps'
 import SEO from '../../components/SEO';
 
 const useIsMobile = () => {
-  const [isMobile, setIsMobile] = require('react').useState(window.innerWidth < 768)
-  require('react').useEffect(() => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  useEffect(() => {
     const handler = () => setIsMobile(window.innerWidth < 768)
     window.addEventListener('resize', handler)
     return () => window.removeEventListener('resize', handler)

@@ -40,6 +40,28 @@
   --font-mono:    'JetBrains Mono', monospace;
 }
 
+[data-theme="dark"] {
+  --color-brand:         #8B80EE;
+  --color-brand-light:   #A79DF2;
+  --color-brand-dim:     #2A2652;
+
+  --color-bg:            #131218;
+  --color-surface:       #1C1B24;
+  --color-surface-2:     #24232E;
+  --color-border:        #333240;
+  --color-border-strong: #454454;
+
+  --color-text-primary:   #F5F5F7;
+  --color-text-secondary: #B4B4C2;
+  --color-text-muted:     #7A7A8C;
+
+  --color-spanish:  #F0B058;
+  --color-french:   #AC9FEE;
+  --color-japanese: #F07272;
+  --color-german:   #62B0F0;
+  --color-korean:   #56DFB4;
+}
+
 /* ── Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import useAuthStore from '../../store/authStore'
+import useThemeStore from '../../store/themestore'
 
 const NAV_LINKS = [
   { label: 'Languages', href: '/#languages' },
@@ -22,6 +23,7 @@ const Navbar = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const { user, signOut } = useAuthStore()
+  const { theme, toggleTheme } = useThemeStore()
   const [menuOpen, setMenuOpen] = useState(false)
   const isMobile = useIsMobile()
 
@@ -43,11 +45,12 @@ const Navbar = () => {
 
   return (
     <header style={{
-      position: 'sticky', top: 0, zIndex: 50,
-      background: 'rgba(250,250,248,0.85)',
-      backdropFilter: 'blur(12px)',
-      borderBottom: '1px solid var(--color-border)',
-    }}>
+  position: 'sticky', top: 0, zIndex: 50,
+  background: 'var(--color-bg)',
+  opacity: 0.95,
+  backdropFilter: 'blur(12px)',
+  borderBottom: '1px solid var(--color-border)',
+}}>
       <nav style={{
         maxWidth: '1120px', margin: '0 auto',
         padding: '0 var(--space-lg)',
@@ -94,9 +97,21 @@ const Navbar = () => {
         )}
 
         {/* Desktop auth */}
-        {!isMobile && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            {user ? (
+{!isMobile && (
+  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+    <button
+      onClick={toggleTheme}
+      style={{
+        background: 'none', border: '1px solid var(--color-border)',
+        borderRadius: 'var(--radius-sm)', cursor: 'pointer',
+        padding: '8px 10px', fontSize: '14px',
+        color: 'var(--color-text-secondary)',
+      }}
+      aria-label="Toggle theme"
+    >
+      {theme === 'light' ? '🌙' : '☀️'}
+    </button>
+    {user ? (
               <>
                 <Link to="/dashboard" style={{
                   fontFamily: 'var(--font-body)', fontSize: '13px',
@@ -168,13 +183,25 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile dropdown menu */}
-      {isMobile && menuOpen && (
-        <div style={{
-          background: 'var(--color-surface)',
-          borderTop: '1px solid var(--color-border)',
-          padding: 'var(--space-lg)',
-          display: 'flex', flexDirection: 'column', gap: 'var(--space-md)',
-        }}>
+{isMobile && menuOpen && (
+  <div style={{
+    background: 'var(--color-surface)',
+    borderTop: '1px solid var(--color-border)',
+    padding: 'var(--space-lg)',
+    display: 'flex', flexDirection: 'column', gap: 'var(--space-md)',
+  }}>
+    <button
+      onClick={toggleTheme}
+      style={{
+        background: 'none', border: '1px solid var(--color-border)',
+        borderRadius: 'var(--radius-sm)', cursor: 'pointer',
+        padding: '10px', fontSize: '14px',
+        color: 'var(--color-text-secondary)',
+        textAlign: 'left', width: 'fit-content',
+      }}
+    >
+      {theme === 'light' ? '🌙 Dark mode' : '☀️ Light mode'}
+    </button>
           {NAV_LINKS.map(function(item) {
             return (
               <a
