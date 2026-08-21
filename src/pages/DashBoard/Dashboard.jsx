@@ -4,6 +4,7 @@ import useAuthStore from '../../store/authStore'
 import useProgressStore from '../../store/progressStore'
 import { LANGUAGES } from '../../data/languages'
 import { ROADMAPS } from '../../data/roadmaps'
+import SEO from '../../components/SEO';
 
 const LanguageProgressCard = ({ lang }) => {
   const { fetchProgress, progress } = useProgressStore()
@@ -124,6 +125,10 @@ const Dashboard = () => {
 
   return (
     <div>
+      <SEO
+        title="Dashboard"
+        description="Your personalized language learning dashboard with progress tracking."
+      />
       {/* Header */}
       <div style={{
         borderBottom: '1px solid var(--color-border)',

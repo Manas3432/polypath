@@ -4,6 +4,7 @@ import { getLanguageById } from '../../data/languages'
 import { ROADMAPS } from '../../data/roadmaps'
 import useAuthStore from '../../store/authStore'
 import useProgressStore from '../../store/progressStore'
+import SEO from '../../components/SEO';
 
 const TYPE_STYLES = {
   App:      { bg: '#EEF2FF', color: '#4338CA' },
@@ -252,6 +253,7 @@ const Roadmap = () => {
   if (!lang || !roadmap) {
     return (
       <div style={{ textAlign: 'center', padding: '80px 24px' }}>
+        <SEO title="Roadmap Not Found" description="This roadmap isn't available yet." />
         <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', marginBottom: '12px' }}>Roadmap not found</h2>
         <Link to="/" style={{ color: 'var(--color-brand)', fontWeight: 500 }}>← Back to home</Link>
       </div>
@@ -260,6 +262,10 @@ const Roadmap = () => {
 
   return (
     <div>
+      <SEO
+      title={`${lang.name} Roadmap`}
+      description={`Structured level-by-level roadmap for learning ${lang.name}, with exam prep and curated resources.`}
+    />
       <div style={{
         borderBottom: '1px solid var(--color-border)',
         background: `linear-gradient(135deg, ${lang.colorDim} 0%, var(--color-bg) 60%)`,

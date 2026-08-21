@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { getLanguageById } from '../../data/languages'
 import { ROADMAPS } from '../../data/roadmaps'
+import SEO from '../../components/SEO';
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = require('react').useState(window.innerWidth < 768)
@@ -20,7 +21,9 @@ const LanguageOverview = () => {
 
   if (!lang || !roadmap) {
     return (
+    
       <div style={{ textAlign: 'center', padding: '80px 24px' }}>
+        <SEO title="Language Not Found" description="This language isn't available yet." />
         <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', marginBottom: '12px' }}>Language not found</h2>
         <Link to="/" style={{ color: 'var(--color-brand)', fontWeight: 500 }}>← Back to home</Link>
       </div>
@@ -29,6 +32,10 @@ const LanguageOverview = () => {
 
   return (
     <div>
+      <SEO
+      title={`${lang.name} Overview`}
+      description={`Learn ${lang.name} with a structured roadmap, exam guides, and curated resources.`}
+    />
       {/* ── Hero Banner ── */}
       <div style={{
         borderBottom: '1px solid var(--color-border)',

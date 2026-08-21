@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'; // adjust relative path per folder depth
 
 const NotFound = () => {
   return (
@@ -8,6 +9,7 @@ const NotFound = () => {
       alignItems: 'center', justifyContent: 'center',
       textAlign: 'center', padding: 'var(--space-xl) var(--space-lg)',
     }}>
+      <SEO title="Page Not Found" description="The page you're looking for doesn't exist." />
       <div style={{
         fontFamily: 'var(--font-mono)', fontSize: 'clamp(80px, 15vw, 140px)',
         fontWeight: 600, color: 'var(--color-border)',

@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { getExamById } from '../../data/exams'
+import SEO from '../components/SEO'; 
 
 const ExamGuide = () => {
   const { examId } = useParams()
@@ -8,6 +9,10 @@ const ExamGuide = () => {
   if (!exam) {
     return (
       <div style={{ textAlign: 'center', padding: '80px 24px' }}>
+        <SEO
+  title={`${exam.name} Guide`}
+  description={`Complete guide to the ${exam.name} exam — structure, prep resources, and tips.`}
+/>
         <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', marginBottom: '12px' }}>Exam not found</h2>
         <Link to="/" style={{ color: 'var(--color-brand)', fontWeight: 500 }}>← Back to home</Link>
       </div>
@@ -26,7 +31,10 @@ const ExamGuide = () => {
 
   return (
     <div>
-
+<SEO
+  title={`${exam.name} Guide`}
+  description={`Complete guide to the ${exam.name} exam — structure, prep resources, and tips.`}
+/>
       {/* ── Header ── */}
       <div style={{
         borderBottom: '1px solid var(--color-border)',

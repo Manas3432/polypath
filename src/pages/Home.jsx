@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { LANGUAGES } from '../data/languages'
+import SEO from '../components/SEO'; 
 
 /* ── Language Card ── */
 const LanguageCard = ({ lang }) => {
@@ -152,7 +153,10 @@ const Step = ({ number, title, description }) => (
 const Home = () => {
   return (
     <div>
-
+<SEO
+        title="Home"
+        description="Structured language learning roadmaps for Spanish, French, Japanese, German, and Korean — with exam prep and curated resources."
+      />
       {/* ── Hero ── */}
       <section style={{
         maxWidth: '1120px',

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BOOKS } from '../data/books'
 import { LANGUAGES } from '../data/languages'
+import SEO from '../components/SEO'; 
 
 const BookCard = ({ book }) => {
   return (
@@ -112,6 +113,10 @@ const Books = () => {
 
   return (
     <div>
+      <SEO
+        title="Book Recommendations"
+        description="Curated book recommendations for language learners, organized by language and level."
+      />
       <div style={{
         borderBottom: '1px solid var(--color-border)',
         background: 'var(--color-surface)',

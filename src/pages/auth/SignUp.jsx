@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
+import SEO from '../components/SEO'; 
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
@@ -31,6 +32,7 @@ const SignUp = () => {
         alignItems: 'center', justifyContent: 'center',
         padding: 'var(--space-lg)',
       }}>
+        <SEO title="Sign Up" description="Create a Polypath account to start tracking your language learning journey." />
         <div style={{
           width: '100%', maxWidth: '400px',
           background: 'var(--color-surface)',
