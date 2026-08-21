@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { getExamById } from '../../data/exams'
-import SEO from '../components/SEO'; 
+import SEO from "../../components/SEO";
 
 const ExamGuide = () => {
   const { examId } = useParams()

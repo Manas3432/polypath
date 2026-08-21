@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
-import SEO from '../components/SEO'; 
+import SEO from "../../components/SEO";
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
