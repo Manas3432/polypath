@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://polypath-delta.vercel.app/</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/books</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/login</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/signup</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/languages/spanish</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/languages/spanish/roadmap</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/languages/french</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/languages/french/roadmap</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/languages/japanese</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/languages/japanese/roadmap</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/languages/german</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/languages/german/roadmap</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/languages/korean</loc></url>
+  <url><loc>https://polypath-delta.vercel.app/languages/korean/roadmap</loc></url>
+</urlset>
