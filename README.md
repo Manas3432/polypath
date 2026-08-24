@@ -16,6 +16,8 @@ Polypath is a structured language learning platform offering step-by-step roadma
 - **Book Store** — Handpicked book recommendations with Amazon and Flipkart links
 - **User Auth** — Sign up, log in, and save your progress across sessions
 - **User Dashboard** — Visual progress overview across all 5 languages
+- **Dark Mode** — Toggle between light and dark themes, preference saved across sessions
+- **SEO Optimized** — Per-page meta tags, Open Graph tags, sitemap, and robots.txt
 
 ---
 
@@ -114,6 +116,7 @@ src/
 │   ├── layout/
 │   │   ├── Navbar.jsx
 │   │   └── Footer.jsx
+│   ├── SEO.jsx
 │   └── AnimatedPage.jsx
 ├── data/
 │   ├── languages.js
@@ -129,7 +132,7 @@ src/
 │   ├── auth/
 │   │   ├── Login.jsx
 │   │   └── SignUp.jsx
-│   ├── dashboard/
+│   ├── DashBoard/
 │   │   └── Dashboard.jsx
 │   ├── exam/
 │   │   └── ExamGuide.jsx
@@ -138,7 +141,8 @@ src/
 │       └── Roadmap.jsx
 ├── store/
 │   ├── authStore.js
-│   └── progressStore.js
+│   ├── progressStore.js
+│   └── themestore.js
 └── styles/
     └── globals.css
 ```
@@ -150,7 +154,7 @@ src/
 - [x] Phase 1 — Static frontend, all pages, deployed on Vercel
 - [x] Phase 2 — Supabase auth + user progress tracking
 - [x] Phase 3 — Book store, user dashboard, animations
-- [ ] Phase 4 — Mobile responsiveness
+- [x] Phase 4 — Mobile responsiveness, dark mode, SEO
 - [ ] Phase 5 — Search, more languages, Spring Boot backend migration
 
 ---
