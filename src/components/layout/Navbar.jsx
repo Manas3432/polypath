@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import useAuthStore from '../../store/authStore'
 import useThemeStore from '../../store/themestore'
+import SearchBar from '../SearchBar'
 
 const NAV_LINKS = [
   { label: 'Languages', href: '/#languages' },
@@ -99,6 +100,7 @@ const Navbar = () => {
         {/* Desktop auth */}
 {!isMobile && (
   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+    <SearchBar />
     <button
       onClick={toggleTheme}
       style={{
@@ -202,6 +204,7 @@ const Navbar = () => {
     >
       {theme === 'light' ? '🌙 Dark mode' : '☀️ Light mode'}
     </button>
+    <SearchBar onNavigate={() => setMenuOpen(false)} />
           {NAV_LINKS.map(function(item) {
             return (
               <a
