@@ -5,6 +5,7 @@ import App from './App'
 import useAuthStore from './store/authStore'
 import { HelmetProvider } from 'react-helmet-async'
 import useThemeStore from './store/themestore'
+import { Analytics } from '@vercel/analytics/react'
 useAuthStore.getState().init()
 useThemeStore.getState().init()
 
@@ -12,6 +13,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>
       <App />
+      <Analytics />
     </HelmetProvider>
   </StrictMode>
 )
