@@ -268,7 +268,7 @@ const Roadmap = () => {
     />
       <div style={{
         borderBottom: '1px solid var(--color-border)',
-        background: `linear-gradient(135deg, ${lang.colorDim} 0%, var(--color-bg) 60%)`,
+        background: `linear-gradient(135deg, color-mix(in srgb, ${lang.color} 18%, var(--color-bg)) 0%, var(--color-bg) 60%)`,
       }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-xl) var(--space-lg)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: 'var(--space-lg)', fontFamily: 'var(--font-body)', fontSize: '13px', color: 'var(--color-text-muted)' }}>

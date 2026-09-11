@@ -201,7 +201,7 @@ const LanguageOverview = () => {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-md)', position: isMobile ? 'static' : 'sticky', top: '80px' }}>
 
           <div style={{
-            background: 'linear-gradient(135deg, ' + lang.colorDim + ', var(--color-surface))',
+            background: `linear-gradient(135deg, color-mix(in srgb, ${lang.color} 18%, var(--color-surface)), var(--color-surface))`,
             border: '1px solid ' + lang.color + '44',
             borderRadius: 'var(--radius-lg)', padding: 'var(--space-lg)', textAlign: 'center',
           }}>

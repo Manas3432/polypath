@@ -147,6 +147,7 @@ const Navbar = () => {
                   background: 'var(--color-brand)', color: '#fff',
                   padding: '8px 16px', borderRadius: 'var(--radius-sm)',
                   transition: 'opacity 0.15s',
+                  whiteSpace: 'nowrap',
                 }}>
                   Get started
                 </Link>
