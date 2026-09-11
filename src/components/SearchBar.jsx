@@ -17,7 +17,7 @@ const SearchBar = ({ onNavigate }) => {
   }
 
   return (
-    <div style={{ position: 'relative', width: '100%', maxWidth: '260px' }}>
+    <div style={{ position: 'relative', width: '100%', maxWidth: '180px' }}>
       <input
         type="text"
         value={query}

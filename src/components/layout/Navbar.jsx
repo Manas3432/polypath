@@ -136,9 +136,10 @@ const Navbar = () => {
             ) : (
               <>
                 <Link to="/login" style={{
-                  fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
-                  color: 'var(--color-text-secondary)', transition: 'color 0.15s',
-                }}>
+  fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
+  color: 'var(--color-text-secondary)', transition: 'color 0.15s',
+  whiteSpace: 'nowrap',
+}}>
                   Log in
                 </Link>
                 <Link to="/signup" style={{
