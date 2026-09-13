@@ -17,7 +17,10 @@ Polypath is a structured language learning platform offering step-by-step roadma
 - **User Auth** — Sign up, log in, and save your progress across sessions
 - **User Dashboard** — Visual progress overview across all 5 languages
 - **Dark Mode** — Toggle between light and dark themes, preference saved across sessions
-- **SEO Optimized** — Per-page meta tags, Open Graph tags, sitemap, and robots.txt
+- **SEO Optimized** — Per-page meta tags, Open Graph tags, sitemap, robots.txt, and social preview cards for link sharing
+- **Search** — Client-side search across languages, exams, and books
+- **Custom Branding** — Custom favicon and app icons
+- **Analytics** — Visitor tracking via Vercel Analytics
 
 ---
 
@@ -34,6 +37,7 @@ Polypath is a structured language learning platform offering step-by-step roadma
 | Backend / Database | Supabase (PostgreSQL) |
 | Authentication     | Supabase Auth         |
 | Hosting            | Vercel                |
+| Analytics          | Vercel Analytics      |
 
 ---
 
@@ -118,6 +122,9 @@ src/
 │   │   └── Footer.jsx
 │   ├── SEO.jsx
 │   └── AnimatedPage.jsx
+|   └── SearchBar.jsx
+|   └── ScrollToTop.jsx
+|
 ├── data/
 │   ├── languages.js
 │   ├── roadmaps.js
@@ -125,6 +132,7 @@ src/
 │   └── books.js
 ├── lib/
 │   └── supabase.js
+|   └── search.js
 ├── pages/
 │   ├── Home.jsx
 │   ├── NotFound.jsx
@@ -155,7 +163,8 @@ src/
 - [x] Phase 2 — Supabase auth + user progress tracking
 - [x] Phase 3 — Book store, user dashboard, animations
 - [x] Phase 4 — Mobile responsiveness, dark mode, SEO
-- [ ] Phase 5 — Search, more languages, Spring Boot backend migration
+- [x] Phase 5 — Search, custom favicon, social preview cards, analytics
+- [ ] Phase 6 — Real learner-sourced content, more languages (incl. Indian languages), Spring Boot backend migration
 
 ---
 
