@@ -40,7 +40,7 @@ const LanguageOverview = () => {
       {/* ── Hero Banner ── */}
       <div style={{
         borderBottom: '1px solid var(--color-border)',
-        background: 'linear-gradient(135deg, ' + lang.colorDim + ' 0%, var(--color-bg) 60%)',
+        background: `linear-gradient(135deg, color-mix(in srgb, ${lang.color} 18%, var(--color-bg)) 0%, var(--color-bg) 60%)`,
       }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto', padding: 'var(--space-xl) var(--space-lg)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: 'var(--space-lg)', fontFamily: 'var(--font-body)', fontSize: '13px', color: 'var(--color-text-muted)' }}>
@@ -146,7 +146,7 @@ const LanguageOverview = () => {
                     </span>
                     <span style={{
                       fontFamily: 'var(--font-mono)', fontSize: '13px',
-                      color: lang.colorText, background: lang.colorDim,
+                      color: lang.colorText, background: `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))`,
                       padding: '4px 10px', borderRadius: '20px',
                     }}>
                       {time}
@@ -174,7 +174,7 @@ const LanguageOverview = () => {
                   }}>
                     <div style={{
                       fontFamily: 'var(--font-mono)', fontSize: '13px', fontWeight: 600,
-                      background: lang.colorDim, color: lang.colorText,
+                      background: `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))`, color: lang.colorText,
                       padding: '6px 12px', borderRadius: 'var(--radius-sm)',
                       flexShrink: 0, minWidth: '48px', textAlign: 'center',
                     }}>

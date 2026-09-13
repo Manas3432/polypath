@@ -38,7 +38,7 @@ const ExamGuide = () => {
       {/* ── Header ── */}
       <div style={{
         borderBottom: '1px solid var(--color-border)',
-        background: `linear-gradient(135deg, ${lc.colorDim} 0%, var(--color-bg) 60%)`,
+        background: `linear-gradient(135deg, color-mix(in srgb, ${lc.color} 18%, var(--color-bg)) 0%, var(--color-bg) 60%)`,
       }}>
         <div style={{ maxWidth: '860px', margin: '0 auto', padding: 'var(--space-xl) var(--space-lg)' }}>
 
@@ -65,7 +65,7 @@ const ExamGuide = () => {
                 </h1>
                 <span style={{
                   fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600,
-                  background: lc.colorDim, color: lc.colorText,
+                  background: `color-mix(in srgb, ${lc.color} 18%, var(--color-bg))`, color: lc.colorText,
                   padding: '4px 10px', borderRadius: '20px',
                 }}>
                   {exam.validity}
@@ -159,7 +159,7 @@ const ExamGuide = () => {
                     </span>
                     <span style={{
                       fontFamily: 'var(--font-mono)', fontSize: '12px',
-                      color: lc.colorText, background: lc.colorDim,
+                      color: lc.colorText, background: `color-mix(in srgb, ${lc.color} 18%, var(--color-bg))`,
                       padding: '3px 10px', borderRadius: '12px',
                     }}>
                       {section.duration}
@@ -241,7 +241,7 @@ const ExamGuide = () => {
 
           {/* Level recommendation */}
           <div style={{
-            background: `linear-gradient(135deg, ${lc.colorDim}, var(--color-surface))`,
+           background: `linear-gradient(135deg, color-mix(in srgb, ${lc.color} 18%, var(--color-surface)), var(--color-surface))`,
             border: `1px solid ${lc.color}44`,
             borderRadius: 'var(--radius-lg)', padding: 'var(--space-lg)',
           }}>
