@@ -12,10 +12,12 @@ import Dashboard from './pages/DashBoard/Dashboard'
 import { AnimatePresence } from 'framer-motion'
 import AnimatedPage from './components/AnimatedPage'
 import Books from './pages/Books'
+import ScrollToTop from './components/ScrollToTop'
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
         <main style={{ flex: 1 }}>
