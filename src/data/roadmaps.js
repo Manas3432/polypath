@@ -446,4 +446,92 @@ export const ROADMAPS = {
       },
     ],
   },
+  mandarin: {
+    about: `Mandarin Chinese is the most spoken native language in the world and the primary language of the world's second-largest economy. With China's growing global business presence, Mandarin is an increasingly valuable skill for engineers and professionals working with Chinese markets, manufacturing, and tech.`,
+    whyLearn: [
+      'Over 1.1 billion native speakers — unmatched reach for business and travel',
+      'China is a global manufacturing and tech hub — valuable for engineering and supply chain roles',
+      'HSK certification is recognized by Chinese universities and employers for study/work visas',
+      'Growing demand for Mandarin speakers in international trade, diplomacy, and tech companies',
+    ],
+    timeline: {
+      beginner: '3–5 months to HSK 2',
+      intermediate: '8–14 months for HSK 3–4',
+      advanced: '2–3 years for HSK 5–6',
+    },
+    levels: [
+      {
+        code: 'HSK 1', name: 'Beginner', duration: '2–3 months',
+        description: 'Understand and use basic phrases for everyday needs. Introduce yourself and ask simple questions.',
+        skills: ['Pinyin pronunciation and tones', 'Basic sentence structure (SVO)', 'Numbers and dates', '~150 words'],
+        resources: [
+          { name: 'Duolingo Chinese', type: 'App', url: 'https://duolingo.com', free: true },
+          { name: 'HelloChinese', type: 'App', url: 'https://hellochinese.cc', free: true },
+          { name: 'Yoyo Chinese Beginner Conversational', type: 'Course', url: 'https://yoyochinese.com', free: false },
+        ],
+      },
+      {
+        code: 'HSK 2', name: 'Elementary', duration: '3–4 months',
+        description: 'Communicate in simple, routine tasks on familiar topics. Handle basic daily interactions.',
+        skills: ['Measure words (量词)', 'Basic time expressions', 'Vocabulary ~300 words', 'Simple questions and negation'],
+        resources: [
+          { name: 'HelloChinese HSK 2 track', type: 'App', url: 'https://hellochinese.cc', free: true },
+          { name: 'Anki Chinese frequency deck', type: 'App', url: 'https://apps.ankiweb.net', free: true },
+        ],
+      },
+      {
+        code: 'HSK 3', name: 'Intermediate', duration: '4–6 months',
+        description: 'Handle most daily, academic, and work situations. Describe experiences and plans.',
+        skills: ['Complex sentence patterns', 'Aspect markers (了, 过, 着)', 'Vocabulary ~600 words', 'Basic reading of short texts'],
+        resources: [
+          { name: 'ChinesePod Intermediate', type: 'Audio', url: 'https://chinesepod.com', free: false },
+          { name: 'Integrated Chinese Level 2', type: 'Book', url: '#', free: false },
+        ],
+      },
+      {
+        code: 'HSK 4', name: 'Upper Intermediate', duration: '6–8 months',
+        description: 'Converse fluently on a wide range of topics. Read and understand news and articles.',
+        skills: ['Complex grammar structures', 'Idiomatic expressions (成语 basics)', 'Vocabulary ~1200 words', 'Formal vs informal register'],
+        resources: [
+          { name: 'ChinesePod Upper Intermediate', type: 'Audio', url: 'https://chinesepod.com', free: false },
+          { name: 'Chairman\'s Bao (graded news)', type: 'Reading', url: 'https://thechairmansbao.com', free: false },
+        ],
+      },
+      {
+        code: 'HSK 5', name: 'Advanced', duration: '8–12 months',
+        description: 'Read newspapers and magazines, watch films, and give a full-length speech in Chinese.',
+        skills: ['Advanced idioms and chengyu', 'Nuanced writing', 'Vocabulary ~2500 words'],
+        resources: [
+          { name: 'Chinese news media (People\'s Daily, Xinhua)', type: 'Reading', url: '#', free: true },
+          { name: 'Advanced HSK 5 prep books', type: 'Book', url: '#', free: false },
+        ],
+      },
+      {
+        code: 'HSK 6', name: 'Mastery', duration: '12+ months',
+        description: 'Near-native fluency. Understand virtually everything heard or read with ease.',
+        skills: ['Native-level comprehension', 'Literary and academic Chinese', 'Vocabulary 5000+ words'],
+        resources: [
+          { name: 'Full native media immersion', type: 'Immersion', url: '#', free: true },
+        ],
+      },
+    ],
+    exams: [
+      {
+        name: 'HSK', fullName: 'Hanyu Shuiping Kaoshi (汉语水平考试)',
+        body: 'Hanban / Chinese Testing International',
+        levels: ['HSK 1', 'HSK 2', 'HSK 3', 'HSK 4', 'HSK 5', 'HSK 6'],
+        sections: ['Listening', 'Reading', 'Writing'],
+        validity: '2 years',
+        whyTakeIt: 'The official standard for Mandarin proficiency, required for Chinese university admission and many work visas/scholarships.',
+      },
+      {
+        name: 'HSKK', fullName: 'HSK Speaking Test',
+        body: 'Hanban / Chinese Testing International',
+        levels: ['Beginner', 'Intermediate', 'Advanced'],
+        sections: ['Speaking'],
+        validity: '2 years',
+        whyTakeIt: 'Companion spoken proficiency test to the written HSK, often required alongside it for full certification.',
+      },
+    ],
+  },
 }
