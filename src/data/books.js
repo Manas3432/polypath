@@ -142,6 +142,32 @@ export const BOOKS = [
     colorDim: '#E6FAF5',
     colorText: '#1A7A5E',
   },
+    {
+    id: 'mandarin-1',
+    language: 'mandarin',
+    title: 'HSK Standard Course 1',
+    author: 'Beijing Language and Culture University Press',
+    level: 'HSK 1',
+    price: 899,
+    description: 'The official HSK textbook series, most widely used for structured beginner-to-advanced Mandarin learning aligned to HSK levels.',
+    tag: 'Bestseller',
+    color: '#D9A441',
+    colorDim: '#FBF3E3',
+    colorText: '#8A6416',
+  },
+  {
+    id: 'mandarin-2',
+    language: 'mandarin',
+    title: 'Integrated Chinese Level 2',
+    author: 'Cheng & Tsui',
+    level: 'HSK 3–4',
+    price: 1399,
+    description: 'A comprehensive intermediate Mandarin course covering grammar, vocabulary, and characters with strong classroom and self-study support.',
+    tag: 'Grammar',
+    color: '#D9A441',
+    colorDim: '#FBF3E3',
+    colorText: '#8A6416',
+  },
 ]
 
 export const getBooksByLanguage = (languageId) => BOOKS.filter(b => b.language === languageId)
