@@ -207,6 +207,79 @@ export const EXAMS = {
     ],
     levelRecommendation: 'Level 3–4 (TOPIK II) for university admission. Level 5–6 for competitive scholarships and professional use.',
   },
+    hsk: {
+    id: 'hsk',
+    name: 'HSK',
+    fullName: 'Hanyu Shuiping Kaoshi (汉语水平考试)',
+    language: 'mandarin',
+    languageName: 'Mandarin Chinese',
+    flag: '🇨🇳',
+    conductedBy: 'Hanban / Chinese Testing International (中国教育部)',
+    validity: '2 years from the date of the results',
+    levels: ['HSK 1', 'HSK 2', 'HSK 3', 'HSK 4', 'HSK 5', 'HSK 6'],
+    frequency: 'Monthly in China; several times a year internationally depending on test center',
+    about: `HSK is the official standard proficiency test for Mandarin Chinese as a foreign language, administered under China's Ministry of Education. It's the primary requirement for Chinese university admission, scholarships, and many work visas. HSK results are valid for only 2 years, so timing matters — align your exam date with your application deadlines.`,
+    whoShouldTakeIt: [
+      'Students applying to Chinese universities (HSK 4–5 typically required)',
+      'Anyone applying for Chinese government scholarships (CSC)',
+      'Professionals seeking employment with Chinese companies or in manufacturing/trade roles',
+      'Engineers targeting supply chain, trade, or tech roles involving China',
+    ],
+    structure: [
+      { section: 'Listening', description: 'Audio-based comprehension — conversations, announcements, short dialogues', duration: '15–40 min' },
+      { section: 'Reading', description: 'Comprehension of texts — notices, short passages, longer articles depending on level', duration: '20–60 min' },
+      { section: 'Writing', description: 'Sentence construction and short essays (from HSK 3 onward)', duration: '15–45 min' },
+    ],
+    prepStrategy: [
+      { phase: '3 months before', tip: 'Build core vocabulary and character recognition using HSK-specific frequency lists — HSK has a fixed vocabulary per level.' },
+      { phase: '2 months before', tip: 'Work through official HSK past papers, freely available on the Chinese Testing International site.' },
+      { phase: '1 month before', tip: 'Daily listening practice — Chinese tones and rapid speech take the longest to adjust to.' },
+      { phase: '1 week before', tip: 'Light review of grammar patterns and character writing. Don\'t cram new vocabulary.' },
+    ],
+    recommendedBooks: [
+      { title: 'HSK Standard Course 4', author: 'Beijing Language and Culture University Press', level: 'HSK 4' },
+      { title: 'HSK Vocabulary List (Official)', author: 'Hanban', level: 'HSK 1–6' },
+      { title: 'Integrated Chinese Level 2', author: 'Cheng & Tsui', level: 'HSK 3–4' },
+    ],
+    usefulLinks: [
+      { label: 'Official HSK website', url: 'https://www.chinesetest.cn' },
+      { label: 'Free past papers', url: 'https://www.chinesetest.cn/godownload.do' },
+    ],
+    levelRecommendation: 'HSK 4 is the practical goal for most university and job requirements. HSK 5–6 for competitive scholarships and professional fluency.',
+  },
+
+  hskk: {
+    id: 'hskk',
+    name: 'HSKK',
+    fullName: 'HSK Speaking Test (汉语水平口语考试)',
+    language: 'mandarin',
+    languageName: 'Mandarin Chinese',
+    flag: '🇨🇳',
+    conductedBy: 'Hanban / Chinese Testing International',
+    validity: '2 years from the date of the results',
+    levels: ['Beginner', 'Intermediate', 'Advanced'],
+    frequency: 'Same schedule as HSK, offered alongside it at most test centers',
+    about: `HSKK is the companion spoken-proficiency test to the written HSK. Since HSK itself doesn't test speaking directly, HSKK is often required alongside it for roles or programs that need verified spoken fluency, such as translation work or teaching positions.`,
+    whoShouldTakeIt: [
+      'Anyone needing certified spoken Mandarin proficiency alongside HSK',
+      'Candidates for teaching or translation roles',
+      'Students applying to programs that specifically require spoken assessment',
+    ],
+    structure: [
+      { section: 'Speaking', description: 'Listen and repeat, picture description, and topic-based response tasks', duration: '10–25 min depending on level' },
+    ],
+    prepStrategy: [
+      { phase: '1 month before', tip: 'Practice speaking aloud daily — shadowing native audio helps most for tone accuracy.' },
+      { phase: '1 week before', tip: 'Record yourself answering sample prompts and compare pacing against official sample answers.' },
+    ],
+    recommendedBooks: [
+      { title: 'HSKK Official Test Papers', author: 'Hanban', level: 'Beginner–Advanced' },
+    ],
+    usefulLinks: [
+      { label: 'Official HSKK info', url: 'https://www.chinesetest.cn' },
+    ],
+    levelRecommendation: 'Intermediate is sufficient for most professional contexts; Advanced only if targeting interpretation/teaching roles.',
+  },
 }
 
 export const getExamById = (id) => EXAMS[id]

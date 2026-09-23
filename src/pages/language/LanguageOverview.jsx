@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { getLanguageById } from '../../data/languages'
+import { getLanguageById, LANGUAGES } from '../../data/languages'
 import { ROADMAPS } from '../../data/roadmaps'
 import SEO from '../../components/SEO';
 
@@ -146,7 +146,7 @@ const LanguageOverview = () => {
                     </span>
                     <span style={{
                       fontFamily: 'var(--font-mono)', fontSize: '13px',
-                      color: lang.colorText, background: `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))`,
+                      color: lang.color, background: `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))`,
                       padding: '4px 10px', borderRadius: '20px',
                     }}>
                       {time}
@@ -174,7 +174,7 @@ const LanguageOverview = () => {
                   }}>
                     <div style={{
                       fontFamily: 'var(--font-mono)', fontSize: '13px', fontWeight: 600,
-                      background: `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))`, color: lang.colorText,
+                      background: `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))`, color: lang.color,
                       padding: '6px 12px', borderRadius: 'var(--radius-sm)',
                       flexShrink: 0, minWidth: '48px', textAlign: 'center',
                     }}>
@@ -247,20 +247,19 @@ const LanguageOverview = () => {
               Other languages
             </h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {['spanish', 'french', 'japanese', 'german', 'korean']
-                .filter(function(id) { return id !== languageId })
-                .map(function(id) {
-                  const names = { spanish: '🇪🇸 Spanish', french: '🇫🇷 French', japanese: '🇯🇵 Japanese', german: '🇩🇪 German', korean: '🇰🇷 Korean' }
-                  return (
-                    <Link key={id} to={'/languages/' + id} style={{
-                      fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
-                      color: 'var(--color-text-secondary)', background: 'var(--color-surface-2)',
-                      padding: '6px 12px', borderRadius: 'var(--radius-sm)',
-                    }}>
-                      {names[id]}
-                    </Link>
-                  )
-                })}
+             {LANGUAGES
+  .filter(function(l) { return l.id !== languageId })
+  .map(function(l) {
+    return (
+      <Link key={l.id} to={'/languages/' + l.id} style={{
+        fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
+        color: 'var(--color-text-secondary)', background: 'var(--color-surface-2)',
+        padding: '6px 12px', borderRadius: 'var(--radius-sm)',
+      }}>
+        {l.flag} {l.name}
+      </Link>
+    )
+  })}
             </div>
           </div>
         </div>

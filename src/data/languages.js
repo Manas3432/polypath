@@ -77,8 +77,8 @@ export const LANGUAGES = [
   speakers: '1.1B+',
   tagline: 'The world\'s most spoken language — huge relevance in business, tech, and global trade.',
   levelSystem: 'HSK (1-6)',
-  levels: ['HSK1', 'HSK2', 'HSK3', 'HSK4', 'HSK5', 'HSK6'],
-  exams: ['HSK'],
+  levels: ['HSK 1', 'HSK 2', 'HSK 3', 'HSK 4', 'HSK 5', 'HSK 6'],
+  exams: ['HSK', 'HSKK'],
   color: '#D9A441',        // amber/gold
   colorDim: '#FBF3E3',
   colorText: '#8A6416',
