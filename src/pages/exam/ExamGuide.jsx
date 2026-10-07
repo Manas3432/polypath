@@ -26,6 +26,7 @@ const ExamGuide = () => {
     japanese:{ color: '#E85858', colorDim: '#FEF0F0', colorText: '#A02020' },
     german:  { color: '#4A9FE8', colorDim: '#EDF5FE', colorText: '#1A5C9A' },
     korean:  { color: '#3DCFA3', colorDim: '#E6FAF5', colorText: '#1A7A5E' },
+    mandarin:{ color: '#D9A441', colorDim: '#FBF3E3', colorText: '#8A6416' },
   }
   const lc = LANG_COLORS[exam.language]
 
@@ -65,7 +66,7 @@ const ExamGuide = () => {
                 </h1>
                 <span style={{
                   fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600,
-                  background: `color-mix(in srgb, ${lc.color} 18%, var(--color-bg))`, color: lc.colorText,
+                  background: `color-mix(in srgb, ${lc.color} 18%, var(--color-bg))`, color: lc.color,
                   padding: '4px 10px', borderRadius: '20px',
                 }}>
                   {exam.validity}
@@ -159,7 +160,7 @@ const ExamGuide = () => {
                     </span>
                     <span style={{
                       fontFamily: 'var(--font-mono)', fontSize: '12px',
-                      color: lc.colorText, background: `color-mix(in srgb, ${lc.color} 18%, var(--color-bg))`,
+                      color: lc.color, background: `color-mix(in srgb, ${lc.color} 18%, var(--color-bg))`,
                       padding: '3px 10px', borderRadius: '12px',
                     }}>
                       {section.duration}
@@ -187,7 +188,7 @@ const ExamGuide = () => {
                 }}>
                   <div style={{
                     fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600,
-                    color: lc.colorText, background: lc.colorDim,
+                    color: lc.color, background: `color-mix(in srgb, ${lc.color} 18%, var(--color-bg))`,
                     padding: '4px 10px', borderRadius: 'var(--radius-sm)',
                     flexShrink: 0, height: 'fit-content', whiteSpace: 'nowrap',
                   }}>
@@ -224,7 +225,7 @@ const ExamGuide = () => {
                   </div>
                   <span style={{
                     fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600,
-                    color: lc.colorText, background: lc.colorDim,
+                    color: lc.color, background: `color-mix(in srgb, ${lc.color} 18%, var(--color-bg))`,
                     padding: '4px 12px', borderRadius: '20px', flexShrink: 0,
                   }}>
                     {book.level}

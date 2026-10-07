@@ -71,7 +71,7 @@ const LevelCard = ({ level, lang, index, isLast }) => {
         >
           <span style={{
             fontFamily: 'var(--font-mono)', fontSize: '13px', fontWeight: 600,
-            background: lang.colorDim, color: lang.colorText,
+            background: `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))`, color: lang.color,
             padding: '5px 12px', borderRadius: 'var(--radius-sm)', flexShrink: 0,
           }}>
             {level.code}
@@ -88,7 +88,7 @@ const LevelCard = ({ level, lang, index, isLast }) => {
               {completed && (
                 <span style={{
                   fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600,
-                  background: lang.colorDim, color: lang.colorText,
+                  background: `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))`, color: lang.color,
                   padding: '2px 8px', borderRadius: '12px',
                 }}>
                   Completed
@@ -298,7 +298,7 @@ const Roadmap = () => {
             {roadmap.levels.map((level) => (
               <span key={level.code} style={{
                 fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600,
-                background: lang.colorDim, color: lang.colorText,
+                background: `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))`, color: lang.color,
                 padding: '5px 12px', borderRadius: '20px',
               }}>
                 {level.code}

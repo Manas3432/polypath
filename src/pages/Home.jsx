@@ -35,8 +35,8 @@ const LanguageCard = ({ lang }) => {
           fontFamily: 'var(--font-mono)',
           fontSize: '11px',
           fontWeight: 500,
-          background: lang.colorDim,
-          color: lang.colorText,
+          background: `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))`,
+color: lang.color,
           padding: '4px 10px',
           borderRadius: '20px',
         }}>
@@ -77,18 +77,18 @@ const LanguageCard = ({ lang }) => {
       {/* Exams */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
         {lang.exams.map(exam => (
-          <span key={exam} style={{
-            fontSize: '11px',
-            fontWeight: 500,
-            color: lang.colorText,
-            background: lang.colorDim,
-            padding: '3px 8px',
-            borderRadius: 'var(--radius-sm)',
-            fontFamily: 'var(--font-body)',
-          }}>
-            {exam}
-          </span>
-        ))}
+  <span key={exam} style={{
+    fontSize: '11px',
+    fontWeight: 500,
+    color: lang.color,
+    background: `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))`,
+    padding: '3px 8px',
+    borderRadius: 'var(--radius-sm)',
+    fontFamily: 'var(--font-body)',
+  }}>
+    {exam}
+  </span>
+))}
       </div>
 
       {/* CTA */}
@@ -155,7 +155,7 @@ const Home = () => {
     <div>
 <SEO
         title="Home"
-        description="Structured language learning roadmaps for Spanish, French, Japanese, German, and Korean — with exam prep and curated resources."
+        description="Structured language learning roadmaps for Spanish, French, Japanese, German, Korean, and Mandarin Chinese — with exam prep and curated resources."
       />
       {/* ── Hero ── */}
       <section style={{
@@ -209,7 +209,7 @@ const Home = () => {
           fontFamily: 'var(--font-body)',
         }}>
           Step-by-step roadmaps, curated resources, and exam guides for
-          Spanish, French, Japanese, German, and Korean — all in one place.
+          Spanish, French, Japanese, German, Korean, and Mandarin Chinese — all in one place.
         </p>
 
         {/* CTA Buttons */}
@@ -319,7 +319,7 @@ const Home = () => {
             <Step
               number="1"
               title="Pick a language"
-              description="Choose from Spanish, French, Japanese, German, or Korean based on your goal."
+              description="Choose from Spanish, French, Japanese, German, Korean, or Mandarin Chinese based on your goal."
             />
             <Step
               number="2"
