@@ -115,6 +115,13 @@ const ExamGuide = () => {
 
           {/* About */}
           <section style={{ marginBottom: 'var(--space-xl)' }}>
+            <span style={{
+              fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600,
+              color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em',
+              display: 'block', marginBottom: '6px',
+            }}>
+              Overview
+            </span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, marginBottom: 'var(--space-md)' }}>
               About {exam.name}
             </h2>
@@ -125,6 +132,13 @@ const ExamGuide = () => {
 
           {/* Who should take it */}
           <section style={{ marginBottom: 'var(--space-xl)' }}>
+            <span style={{
+              fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600,
+              color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em',
+              display: 'block', marginBottom: '6px',
+            }}>
+              Eligibility
+            </span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, marginBottom: 'var(--space-md)' }}>
               Who should take it?
             </h2>
@@ -144,6 +158,13 @@ const ExamGuide = () => {
 
           {/* Exam structure */}
           <section style={{ marginBottom: 'var(--space-xl)' }}>
+            <span style={{
+              fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600,
+              color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em',
+              display: 'block', marginBottom: '6px',
+            }}>
+              Format
+            </span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, marginBottom: 'var(--space-md)' }}>
               Exam structure
             </h2>
@@ -176,6 +197,13 @@ const ExamGuide = () => {
 
           {/* Prep strategy */}
           <section style={{ marginBottom: 'var(--space-xl)' }}>
+            <span style={{
+              fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600,
+              color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em',
+              display: 'block', marginBottom: '6px',
+            }}>
+              How to prepare
+            </span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, marginBottom: 'var(--space-md)' }}>
               Prep strategy
             </h2>
@@ -204,6 +232,13 @@ const ExamGuide = () => {
 
           {/* Recommended books */}
           <section>
+            <span style={{
+              fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600,
+              color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em',
+              display: 'block', marginBottom: '6px',
+            }}>
+              Resources
+            </span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, marginBottom: 'var(--space-md)' }}>
               Recommended books
             </h2>
