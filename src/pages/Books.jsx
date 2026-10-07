@@ -157,9 +157,9 @@ const Books = () => {
                   style={{
                     fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
                     padding: '6px 16px', borderRadius: '20px', cursor: 'pointer',
-                    border: '1px solid ' + (activeLanguage === lang.id ? lang.color : 'var(--color-border)'),
-                    background: activeLanguage === lang.id ? lang.colorDim : 'var(--color-surface)',
-                    color: activeLanguage === lang.id ? lang.colorText : 'var(--color-text-secondary)',
+                                      border: '1px solid ' + (activeLanguage === lang.id ? lang.color : 'var(--color-border)'),
+                  background: activeLanguage === lang.id ? `color-mix(in srgb, ${lang.color} 18%, var(--color-bg))` : 'var(--color-surface)',
+                  color: activeLanguage === lang.id ? lang.color : 'var(--color-text-secondary)',
                     transition: 'all 0.15s',
                   }}
                 >
