@@ -106,7 +106,14 @@ const LanguageOverview = () => {
             </p>
           </section>
 
-          <section style={{ marginBottom: 'var(--space-xl)' }}>
+                    <section style={{ marginBottom: 'var(--space-xl)' }}>
+            <span style={{
+              fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600,
+              color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em',
+              display: 'block', marginBottom: '6px',
+            }}>
+              Why this language
+            </span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, marginBottom: 'var(--space-md)' }}>
               Why learn {lang.name}?
             </h2>
@@ -126,7 +133,14 @@ const LanguageOverview = () => {
             </div>
           </section>
 
-          <section style={{ marginBottom: 'var(--space-xl)' }}>
+                    <section style={{ marginBottom: 'var(--space-xl)' }}>
+            <span style={{
+              fontFamily: 'var(--font-body)', fontSize: '11px', fontWeight: 600,
+              color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em',
+              display: 'block', marginBottom: '6px',
+            }}>
+              Timeline
+            </span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, marginBottom: 'var(--space-md)' }}>
               Realistic timeline
             </h2>
