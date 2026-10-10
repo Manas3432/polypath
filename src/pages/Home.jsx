@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { LANGUAGES } from '../data/languages'
-import SEO from '../components/SEO'; 
+import { EXAMS } from '../data/exams'
+import SEO from '../components/SEO'
 
 /* ── Language Card ── */
 const LanguageCard = ({ lang }) => {
@@ -148,6 +149,128 @@ const Step = ({ number, title, description }) => (
     </p>
   </div>
 )
+
+/* ── Exam Card ── */
+const ExamCard = ({ exam }) => {
+  const lang = LANGUAGES.find(l => l.id === exam.language)
+  const color = lang?.color || 'var(--color-brand)'
+
+  return (
+    <Link
+      to={`/exams/${exam.id}`}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        background: 'var(--color-surface)',
+        border: '1px solid var(--color-border)',
+        borderRadius: 'var(--radius-lg)',
+        padding: 'var(--space-lg)',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
+        cursor: 'pointer',
+        textDecoration: 'none',
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.transform = 'translateY(-4px)'
+        e.currentTarget.style.boxShadow = `0 12px 32px ${color}22`
+        e.currentTarget.style.borderColor = color
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.transform = 'translateY(0)'
+        e.currentTarget.style.boxShadow = 'none'
+        e.currentTarget.style.borderColor = 'var(--color-border)'
+      }}
+    >
+      <div>
+        {/* Top row — flag + validity badge */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 'var(--space-md)' }}>
+          <span style={{ fontSize: '32px', lineHeight: 1 }}>{exam.flag}</span>
+          <span style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: '11px',
+            fontWeight: 500,
+            background: `color-mix(in srgb, ${color} 18%, var(--color-bg))`,
+            color: color,
+            padding: '3px 8px',
+            borderRadius: '20px',
+          }}>
+            {exam.validity.split('—')[0].trim()}
+          </span>
+        </div>
+
+        {/* Name + language */}
+        <div style={{ marginBottom: 'var(--space-sm)' }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+            <h3 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '20px',
+              fontWeight: 700,
+              color: 'var(--color-text-primary)',
+              margin: 0,
+            }}>
+              {exam.name}
+            </h3>
+            <span style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '12px',
+              fontWeight: 600,
+              color: color,
+            }}>
+              {exam.languageName}
+            </span>
+          </div>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '12px',
+            color: 'var(--color-text-muted)',
+            marginTop: '4px',
+            marginBottom: 'var(--space-sm)',
+            lineHeight: 1.4,
+          }}>
+            {exam.conductedBy}
+          </p>
+        </div>
+
+        {/* Levels */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: 'var(--space-md)' }}>
+          {exam.levels.map(lvl => (
+            <span key={lvl} style={{
+              fontSize: '11px',
+              fontFamily: 'var(--font-mono)',
+              fontWeight: 500,
+              color: 'var(--color-text-secondary)',
+              background: 'var(--color-surface-2)',
+              padding: '2px 6px',
+              borderRadius: 'var(--radius-sm)',
+            }}>
+              {lvl}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div style={{
+        marginTop: 'var(--space-md)',
+        paddingTop: 'var(--space-md)',
+        borderTop: '1px solid var(--color-border)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}>
+        <span style={{
+          fontSize: '13px',
+          fontWeight: 600,
+          color: color,
+          fontFamily: 'var(--font-body)',
+        }}>
+          Exam guide & tips
+        </span>
+        <span style={{ color: color, fontSize: '16px' }}>→</span>
+      </div>
+    </Link>
+  )
+}
 
 /* ── Home Page ── */
 const Home = () => {
@@ -332,6 +455,41 @@ const Home = () => {
               description="Dedicated exam guides with prep strategies, recommended books, and mock test tips."
             />
           </div>
+        </div>
+      </section>
+
+      {/* ── Official Exam Guides ── */}
+      <section id="exams" style={{
+        maxWidth: '1120px',
+        margin: '0 auto',
+        padding: 'var(--space-2xl) var(--space-lg)',
+      }}>
+        <div style={{ textAlign: 'center', marginBottom: 'var(--space-xl)' }}>
+          <h2 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(24px, 4vw, 36px)',
+            fontWeight: 700,
+            marginBottom: 'var(--space-sm)',
+          }}>
+            Official exam guides
+          </h2>
+          <p style={{
+            fontSize: '15px',
+            color: 'var(--color-text-secondary)',
+            fontFamily: 'var(--font-body)',
+          }}>
+            Test structures, scoring criteria, preparation strategies, and practice resources for all major certifications.
+          </p>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: 'var(--space-md)',
+        }}>
+          {Object.values(EXAMS).map(exam => (
+            <ExamCard key={exam.id} exam={exam} />
+          ))}
         </div>
       </section>
 

@@ -6,7 +6,7 @@ import SearchBar from '../SearchBar'
 
 const NAV_LINKS = [
   { label: 'Languages', href: '/#languages' },
-  { label: 'Exams', href: '/#how-it-works' },
+  { label: 'Exams', href: '/#exams' },
   { label: 'Books', href: '/books' },
 ]
 

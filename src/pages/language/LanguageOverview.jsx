@@ -240,6 +240,18 @@ const LanguageOverview = () => {
               Certifications
             </h3>
             {roadmap.exams.map(function(exam) {
+              const guideId = (function() {
+                const name = exam.name.toLowerCase()
+                if (name.includes('dele')) return 'dele'
+                if (name.includes('delf')) return 'delf'
+                if (name.includes('jlpt')) return 'jlpt'
+                if (name.includes('goethe')) return 'goethe'
+                if (name.includes('topik')) return 'topik'
+                if (exam.name === 'HSK') return 'hsk'
+                if (exam.name === 'HSKK') return 'hskk'
+                return null
+              })()
+
               return (
                 <div key={exam.name} style={{ paddingBottom: 'var(--space-md)', marginBottom: 'var(--space-md)', borderBottom: '1px solid var(--color-border)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
@@ -251,6 +263,25 @@ const LanguageOverview = () => {
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
                     {exam.whyTakeIt}
                   </p>
+                  {guideId && (
+                    <div style={{ marginTop: '8px' }}>
+                      <Link
+                        to={`/exams/${guideId}`}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '12px',
+                          fontWeight: 600,
+                          color: lang.color,
+                          textDecoration: 'none',
+                        }}
+                      >
+                        View exam guide →
+                      </Link>
+                    </div>
+                  )}
                 </div>
               )
             })}

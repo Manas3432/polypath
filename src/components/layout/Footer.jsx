@@ -80,14 +80,30 @@ const Footer = () => {
             Exams
           </h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            {['DELE', 'DELF / DALF', 'JLPT', 'Goethe', 'TOPIK'].map(exam => (
-              <span key={exam} style={{
-                fontFamily: 'var(--font-body)', fontSize: '14px',
-                color: 'var(--color-text-secondary)',
-                fontFamily: 'var(--font-mono)', fontSize: '13px',
-              }}>
-                {exam}
-              </span>
+            {[
+              { id: 'dele', name: 'DELE' },
+              { id: 'delf', name: 'DELF' },
+              { id: 'jlpt', name: 'JLPT' },
+              { id: 'goethe', name: 'Goethe' },
+              { id: 'topik', name: 'TOPIK' },
+              { id: 'hsk', name: 'HSK' },
+              { id: 'hskk', name: 'HSKK' },
+            ].map(exam => (
+              <Link
+                key={exam.id}
+                to={`/exams/${exam.id}`}
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '13px',
+                  color: 'var(--color-text-secondary)',
+                  transition: 'color 0.15s',
+                  textDecoration: 'none',
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand)'}
+                onMouseLeave={e => e.currentTarget.style.color = 'var(--color-text-secondary)'}
+              >
+                {exam.name}
+              </Link>
             ))}
           </div>
         </div>
