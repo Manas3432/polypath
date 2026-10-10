@@ -1,24 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import useAuthStore from '../../store/authStore'
 import useThemeStore from '../../store/themestore'
 import SearchBar from '../SearchBar'
+import useIsMobile from '../../hooks/useIsMobile'
 
 const NAV_LINKS = [
   { label: 'Languages', href: '/#languages' },
   { label: 'Exams', href: '/#exams' },
   { label: 'Books', href: '/books' },
 ]
-
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener('resize', handler)
-    return () => window.removeEventListener('resize', handler)
-  }, [])
-  return isMobile
-}
 
 const Navbar = () => {
   const location = useLocation()

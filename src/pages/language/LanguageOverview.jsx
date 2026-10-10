@@ -1,18 +1,8 @@
-import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getLanguageById, LANGUAGES } from '../../data/languages'
 import { ROADMAPS } from '../../data/roadmaps'
-import SEO from '../../components/SEO';
-
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener('resize', handler)
-    return () => window.removeEventListener('resize', handler)
-  }, [])
-  return isMobile
-}
+import SEO from '../../components/SEO'
+import useIsMobile from '../../hooks/useIsMobile'
 
 const LanguageOverview = () => {
   const { languageId } = useParams()

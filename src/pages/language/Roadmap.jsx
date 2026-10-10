@@ -248,7 +248,7 @@ const Roadmap = () => {
     if (user) {
       fetchProgress(user.id, languageId)
     }
-  }, [user, languageId])
+  }, [user, languageId, fetchProgress])
 
   if (!lang || !roadmap) {
     return (
