@@ -7,8 +7,7 @@ import { ROADMAPS } from '../../data/roadmaps'
 import SEO from '../../components/SEO';
 
 const LanguageProgressCard = ({ lang }) => {
-  const { fetchProgress, progress } = useProgressStore()
-  const { user } = useAuthStore()
+  const { progress } = useProgressStore()
   const roadmap = ROADMAPS[lang.id]
   const totalLevels = roadmap.levels.length
   const completedLevels = progress.filter(p => p.language_id === lang.id).length
@@ -102,17 +101,18 @@ const LanguageProgressCard = ({ lang }) => {
 }
 
 const Dashboard = () => {
-  const { user, signOut } = useAuthStore()
+  const { user, loading, signOut } = useAuthStore()
   const { fetchProgress, progress } = useProgressStore()
   const navigate = useNavigate()
 
   useEffect(() => {
+    if (loading) return
     if (!user) {
       navigate('/login')
       return
     }
     LANGUAGES.forEach(lang => fetchProgress(user.id, lang.id))
-  }, [user])
+  }, [user, loading, fetchProgress, navigate])
 
   const handleSignOut = async () => {
     await signOut()
@@ -121,7 +121,7 @@ const Dashboard = () => {
 
   const totalCompleted = progress.length
 
-  if (!user) return null
+  if (loading || !user) return null
 
   return (
     <div>

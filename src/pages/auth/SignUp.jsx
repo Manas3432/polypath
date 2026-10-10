@@ -72,6 +72,7 @@ const SignUp = () => {
       alignItems: 'center', justifyContent: 'center',
       padding: 'var(--space-lg)',
     }}>
+      <SEO title="Sign Up" description="Create a Polypath account to start tracking your language learning journey." />
       <div style={{
         width: '100%', maxWidth: '400px',
         background: 'var(--color-surface)',
@@ -103,7 +104,7 @@ const SignUp = () => {
           </div>
         )}
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-md)' }}>
+        <form onSubmit={handleSignUp} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-md)' }}>
           <div>
             <label style={{
               fontFamily: 'var(--font-body)', fontSize: '13px',
@@ -155,7 +156,7 @@ const SignUp = () => {
           </div>
 
           <button
-            onClick={handleSignUp}
+            type="submit"
             disabled={loading}
             style={{
               width: '100%', padding: '12px',
@@ -168,7 +169,7 @@ const SignUp = () => {
           >
             {loading ? 'Creating account...' : 'Create account'}
           </button>
-        </div>
+        </form>
 
         <p style={{
           fontFamily: 'var(--font-body)', fontSize: '13px',

@@ -64,7 +64,7 @@ const Login = () => {
           </div>
         )}
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-md)' }}>
+        <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-md)' }}>
           <div>
             <label style={{
               fontFamily: 'var(--font-body)', fontSize: '13px',
@@ -116,7 +116,7 @@ const Login = () => {
           </div>
 
           <button
-            onClick={handleLogin}
+            type="submit"
             disabled={loading}
             style={{
               width: '100%', padding: '12px',
@@ -129,7 +129,7 @@ const Login = () => {
           >
             {loading ? 'Logging in...' : 'Log in'}
           </button>
-        </div>
+        </form>
 
         <p style={{
           fontFamily: 'var(--font-body)', fontSize: '13px',

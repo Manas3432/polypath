@@ -10,9 +10,9 @@ const ExamGuide = () => {
     return (
       <div style={{ textAlign: 'center', padding: '80px 24px' }}>
         <SEO
-  title={`${exam.name} Guide`}
-  description={`Complete guide to the ${exam.name} exam — structure, prep resources, and tips.`}
-/>
+          title="Exam Not Found"
+          description="The exam you're looking for doesn't exist on Polypath."
+        />
         <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', marginBottom: '12px' }}>Exam not found</h2>
         <Link to="/" style={{ color: 'var(--color-brand)', fontWeight: 500 }}>← Back to home</Link>
       </div>
