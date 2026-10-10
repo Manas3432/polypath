@@ -2,7 +2,7 @@
 
 > Learn any language, the right way.
 
-Polypath is a structured language learning platform offering step-by-step roadmaps, curated resources, exam guides, and book recommendations for Spanish, French, Japanese, German, and Korean.
+Polypath is a structured language learning platform offering step-by-step roadmaps, curated resources, exam guides, and book recommendations for Spanish, French, Japanese, German, Korean, and Mandarin Chinese.
 
 **Live:** [polypath-delta.vercel.app](https://polypath-delta.vercel.app)
 
@@ -10,12 +10,12 @@ Polypath is a structured language learning platform offering step-by-step roadma
 
 ## Features
 
-- **Language Roadmaps** — Level-by-level learning paths (A1→C2 / N5→N1) with curated resources at each stage
-- **Exam Guides** — Detailed guides for DELE, DELF, JLPT, Goethe-Zertifikat, and TOPIK
+- **Language Roadmaps** — Level-by-level learning paths (A1→C2 / N5→N1 / HSK 1→6) with curated resources at each stage
+- **Exam Guides** — Detailed guides for DELE, DELF, JLPT, Goethe-Zertifikat, TOPIK, HSK, and HSKK
 - **Progress Tracking** — Mark levels as complete and track your journey across all languages
 - **Book Store** — Handpicked book recommendations with Amazon and Flipkart links
 - **User Auth** — Sign up, log in, and save your progress across sessions
-- **User Dashboard** — Visual progress overview across all 5 languages
+- **User Dashboard** — Visual progress overview across all 6 languages
 - **Dark Mode** — Toggle between light and dark themes, preference saved across sessions
 - **SEO Optimized** — Per-page meta tags, Open Graph tags, sitemap, robots.txt, and social preview cards for link sharing
 - **Search** — Client-side search across languages, exams, and books
@@ -58,13 +58,14 @@ Polypath is a structured language learning platform offering step-by-step roadma
 
 ## Languages Supported
 
-| Language    | Exam                       | Level System |
-| ----------- | -------------------------- | ------------ |
-| 🇪🇸 Spanish  | DELE, SIELE                | CEFR (A1–C2) |
-| 🇫🇷 French   | DELF, DALF                 | CEFR (A1–C2) |
-| 🇯🇵 Japanese | JLPT                       | N5–N1        |
-| 🇩🇪 German   | Goethe-Zertifikat, TestDaF | CEFR (A1–C2) |
-| 🇰🇷 Korean   | TOPIK I & II               | Level 1–6    |
+| Language            | Exam                       | Level System |
+| ------------------- | -------------------------- | ------------ |
+| 🇪🇸 Spanish          | DELE, SIELE                | CEFR (A1–C2) |
+| 🇫🇷 French           | DELF, DALF                 | CEFR (A1–C2) |
+| 🇯🇵 Japanese         | JLPT                       | N5–N1        |
+| 🇩🇪 German           | Goethe-Zertifikat, TestDaF | CEFR (A1–C2) |
+| 🇰🇷 Korean           | TOPIK I & II               | Level 1–6    |
+| 🇨🇳 Mandarin Chinese | HSK, HSKK                  | HSK (1–6)    |
 
 ---
 

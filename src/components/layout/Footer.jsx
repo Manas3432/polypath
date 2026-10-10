@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { LANGUAGES } from '../../data/languages'
 
 const Footer = () => {
   return (
@@ -33,8 +34,8 @@ const Footer = () => {
           </p>
           {/* Language pills */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-            {['🇪🇸', '🇫🇷', '🇯🇵', '🇩🇪', '🇰🇷'].map(flag => (
-              <span key={flag} style={{ fontSize: '18px' }}>{flag}</span>
+            {LANGUAGES.map(lang => (
+              <span key={lang.id} style={{ fontSize: '18px' }}>{lang.flag}</span>
             ))}
           </div>
         </div>
@@ -49,17 +50,12 @@ const Footer = () => {
             Languages
           </h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            {[
-              { id: 'spanish', name: 'Spanish' },
-              { id: 'french', name: 'French' },
-              { id: 'japanese', name: 'Japanese' },
-              { id: 'german', name: 'German' },
-              { id: 'korean', name: 'Korean' },
-            ].map(lang => (
+            {LANGUAGES.map(lang => (
               <Link key={lang.id} to={`/languages/${lang.id}`} style={{
                 fontFamily: 'var(--font-body)', fontSize: '14px',
                 color: 'var(--color-text-secondary)',
                 transition: 'color 0.15s',
+                textDecoration: 'none',
               }}
               onMouseEnter={e => e.currentTarget.style.color = 'var(--color-brand)'}
               onMouseLeave={e => e.currentTarget.style.color = 'var(--color-text-secondary)'}

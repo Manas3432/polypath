@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import SEO from '../components/SEO'; // adjust relative path per folder depth
+import { LANGUAGES } from '../data/languages'
+import SEO from '../components/SEO'
 
 const NotFound = () => {
   return (
@@ -43,16 +44,10 @@ const NotFound = () => {
           Pick a language instead
         </p>
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {[
-            { id: 'spanish', flag: '🇪🇸', dim: '#FEF3E2', text: '#A0620A' },
-            { id: 'french',  flag: '🇫🇷', dim: '#F0EDFD', text: '#5842B0' },
-            { id: 'japanese',flag: '🇯🇵', dim: '#FEF0F0', text: '#A02020' },
-            { id: 'german',  flag: '🇩🇪', dim: '#EDF5FE', text: '#1A5C9A' },
-            { id: 'korean',  flag: '🇰🇷', dim: '#E6FAF5', text: '#1A7A5E' },
-          ].map(lang => (
+          {LANGUAGES.map(lang => (
             <Link key={lang.id} to={`/languages/${lang.id}`} style={{
               fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 500,
-              background: lang.dim, color: lang.text,
+              background: lang.colorDim, color: lang.colorText,
               padding: '8px 16px', borderRadius: 'var(--radius-md)',
               display: 'flex', alignItems: 'center', gap: '6px',
               transition: 'transform 0.15s', textDecoration: 'none',
@@ -61,7 +56,7 @@ const NotFound = () => {
             onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
             >
               <span>{lang.flag}</span>
-              <span style={{ textTransform: 'capitalize' }}>{lang.id}</span>
+              <span>{lang.name}</span>
             </Link>
           ))}
         </div>

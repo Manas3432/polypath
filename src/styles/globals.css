@@ -22,6 +22,7 @@
   --color-japanese: #E85858;
   --color-german:   #4A9FE8;
   --color-korean:   #3DCFA3;
+  --color-mandarin: #D9A441;
 
   --space-xs:  4px;
   --space-sm:  8px;
@@ -60,6 +61,7 @@
   --color-japanese: #F07272;
   --color-german:   #62B0F0;
   --color-korean:   #56DFB4;
+  --color-mandarin: #E5B355;
 }
 
 /* ── Base ── */
