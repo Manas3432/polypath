@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
 import SEO from "../../components/SEO";
 
@@ -10,19 +10,43 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false)
   const [confirmed, setConfirmed] = useState(false)
 
+  const navigate = useNavigate()
+
   const handleSignUp = async (e) => {
     e.preventDefault()
     setLoading(true)
     setError(null)
 
-    const { error } = await supabase.auth.signUp({ email, password })
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: `${window.location.origin}/dashboard`,
+      },
+    })
 
     if (error) {
       setError(error.message)
       setLoading(false)
-    } else {
-      setConfirmed(true)
+      return
     }
+
+    // Supabase returns an empty identities list when an account already exists
+    if (data?.user?.identities && data.user.identities.length === 0) {
+      setError('An account with this email already exists. Please log in instead.')
+      setLoading(false)
+      return
+    }
+
+    // If "Confirm email" is disabled in Supabase, a session is created immediately
+    if (data?.session) {
+      navigate('/dashboard')
+      return
+    }
+
+    // Confirmation email was requested
+    setConfirmed(true)
+    setLoading(false)
   }
 
   if (confirmed) {
@@ -51,9 +75,16 @@ const SignUp = () => {
           <p style={{
             fontFamily: 'var(--font-body)', fontSize: '14px',
             color: 'var(--color-text-secondary)', lineHeight: 1.7,
-            marginBottom: 'var(--space-lg)',
+            marginBottom: 'var(--space-md)',
           }}>
             We sent a confirmation link to <strong>{email}</strong>. Click it to activate your account and start tracking your progress.
+          </p>
+          <p style={{
+            fontFamily: 'var(--font-body)', fontSize: '12px',
+            color: 'var(--color-text-secondary)', marginBottom: 'var(--space-lg)',
+            background: 'var(--color-bg)', padding: '8px 12px', borderRadius: 'var(--radius-md)',
+          }}>
+            💡 Don't see it? Be sure to check your Spam, Junk, or Promotions folder.
           </p>
           <Link to="/login" style={{
             fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600,
