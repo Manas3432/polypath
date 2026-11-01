@@ -4,6 +4,7 @@ import Footer from './components/layout/Footer'
 import Home from './pages/Home'
 import LanguageOverview from './pages/language/LanguageOverview'
 import Roadmap from './pages/language/Roadmap'
+import Exams from './pages/Exams'
 import ExamGuide from './pages/exam/ExamGuide'
 import SignUp from './pages/auth/SignUp'
 import Login from './pages/auth/Login'
@@ -22,6 +23,7 @@ const AnimatedRoutes = () => {
         <Route path="/" element={<AnimatedPage><Home /></AnimatedPage>} />
         <Route path="/languages/:languageId" element={<AnimatedPage><LanguageOverview /></AnimatedPage>} />
         <Route path="/languages/:languageId/roadmap" element={<AnimatedPage><Roadmap /></AnimatedPage>} />
+        <Route path="/exams" element={<AnimatedPage><Exams /></AnimatedPage>} />
         <Route path="/exams/:examId" element={<AnimatedPage><ExamGuide /></AnimatedPage>} />
         <Route path="/signup" element={<AnimatedPage><SignUp /></AnimatedPage>} />
         <Route path="/login" element={<AnimatedPage><Login /></AnimatedPage>} />

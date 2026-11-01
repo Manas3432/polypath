@@ -7,7 +7,7 @@ import useIsMobile from '../../hooks/useIsMobile'
 
 const NAV_LINKS = [
   { label: 'Languages', href: '/#languages' },
-  { label: 'Exams', href: '/#exams' },
+  { label: 'Exams', href: '/exams' },
   { label: 'Books', href: '/books' },
 ]
 
@@ -67,9 +67,9 @@ const Navbar = () => {
           }}>
             {NAV_LINKS.map(function(item) {
               return (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   onClick={function(e) { handleNavClick(e, item.href) }}
                   style={{
                     fontFamily: 'var(--font-body)',
@@ -82,7 +82,7 @@ const Navbar = () => {
                   onMouseLeave={function(e) { e.currentTarget.style.color = 'var(--color-text-secondary)' }}
                 >
                   {item.label}
-                </a>
+                </Link>
               )
             })}
           </div>
@@ -245,9 +245,9 @@ const Navbar = () => {
     <SearchBar onNavigate={() => setMenuOpen(false)} />
           {NAV_LINKS.map(function(item) {
             return (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 onClick={function(e) { handleNavClick(e, item.href) }}
                 style={{
                   fontFamily: 'var(--font-body)', fontSize: '16px', fontWeight: 500,
@@ -257,7 +257,7 @@ const Navbar = () => {
                 }}
               >
                 {item.label}
-              </a>
+              </Link>
             )
           })}
 
