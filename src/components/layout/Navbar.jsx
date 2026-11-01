@@ -89,61 +89,106 @@ const Navbar = () => {
         )}
 
         {/* Desktop auth */}
-{!isMobile && (
-  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-    <SearchBar />
-    <button
-      onClick={toggleTheme}
-      style={{
-        background: 'none', border: '1px solid var(--color-border)',
-        borderRadius: 'var(--radius-sm)', cursor: 'pointer',
-        padding: '8px 10px', fontSize: '14px',
-        color: 'var(--color-text-secondary)',
-      }}
-      aria-label="Toggle theme"
-    >
-      {theme === 'light' ? '🌙' : '☀️'}
-    </button>
-    {user ? (
-              <>
-                <Link to="/dashboard" style={{
-                  fontFamily: 'var(--font-body)', fontSize: '13px',
-                  color: 'var(--color-brand)', fontWeight: 500,
-                  maxWidth: '160px', overflow: 'hidden',
-                  textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                }}>
-                  {user.email.split('@')[0]}
-                </Link>
-                <button onClick={handleSignOut} style={{
-                  fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
-                  background: 'transparent', color: 'var(--color-text-secondary)',
-                  padding: '8px 16px', borderRadius: 'var(--radius-sm)',
-                  border: '1px solid var(--color-border)',
-                  cursor: 'pointer', transition: 'border-color 0.15s',
-                }}>
-                  Sign out
-                </button>
-              </>
-            ) : (
-              <>
-                <Link to="/login" style={{
-  fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
-  color: 'var(--color-text-secondary)', transition: 'color 0.15s',
-  whiteSpace: 'nowrap',
-}}>
-                  Log in
-                </Link>
-                <Link to="/signup" style={{
-                  fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
-                  background: 'var(--color-brand)', color: '#fff',
-                  padding: '8px 16px', borderRadius: 'var(--radius-sm)',
-                  transition: 'opacity 0.15s',
-                  whiteSpace: 'nowrap',
-                }}>
-                  Get started
-                </Link>
-              </>
-            )}
+        {!isMobile && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <SearchBar />
+            <button
+              onClick={toggleTheme}
+              style={{
+                background: 'none', border: '1px solid var(--color-border)',
+                borderRadius: 'var(--radius-sm)', cursor: 'pointer',
+                padding: '8px 10px', fontSize: '14px',
+                color: 'var(--color-text-secondary)',
+                lineHeight: 1,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? '🌙' : '☀️'}
+            </button>
+            <div style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'flex-end',
+              gap: '8px', flex: '0 0 156px',
+            }}>
+              {user ? (
+                <>
+                  <Link
+                    to="/dashboard"
+                    title={`Signed in as ${user.email}`}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: '6px',
+                      fontFamily: 'var(--font-body)', fontSize: '13px',
+                      color: 'var(--color-brand)', fontWeight: 500,
+                      textDecoration: 'none', transition: 'opacity 0.15s',
+                      whiteSpace: 'nowrap',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.8' }}
+                    onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
+                  >
+                    <span style={{
+                      width: '24px', height: '24px', borderRadius: '50%',
+                      background: 'var(--color-brand)', color: '#fff',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontSize: '11px', fontWeight: 700, textTransform: 'uppercase',
+                      flexShrink: 0,
+                    }}>
+                      {user.email?.[0] || 'U'}
+                    </span>
+                    <span>Dashboard</span>
+                  </Link>
+                  <button
+                    onClick={handleSignOut}
+                    style={{
+                      fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 500,
+                      background: 'transparent', color: 'var(--color-text-secondary)',
+                      padding: '6px 10px', borderRadius: 'var(--radius-sm)',
+                      border: '1px solid var(--color-border)',
+                      cursor: 'pointer', transition: 'border-color 0.15s, color 0.15s',
+                      whiteSpace: 'nowrap',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = 'var(--color-text-secondary)'
+                      e.currentTarget.style.color = 'var(--color-text-primary)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = 'var(--color-border)'
+                      e.currentTarget.style.color = 'var(--color-text-secondary)'
+                    }}
+                  >
+                    Sign out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/login"
+                    style={{
+                      fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
+                      color: 'var(--color-text-secondary)', transition: 'color 0.15s',
+                      whiteSpace: 'nowrap',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand)' }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-text-secondary)' }}
+                  >
+                    Log in
+                  </Link>
+                  <Link
+                    to="/signup"
+                    style={{
+                      fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500,
+                      background: 'var(--color-brand)', color: '#fff',
+                      padding: '8px 16px', borderRadius: 'var(--radius-sm)',
+                      transition: 'opacity 0.15s',
+                      whiteSpace: 'nowrap',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.9' }}
+                    onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
+                  >
+                    Get started
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
         )}
 
@@ -223,8 +268,18 @@ const Navbar = () => {
                 color: 'var(--color-brand)', textDecoration: 'none',
                 padding: 'var(--space-sm) 0',
                 borderBottom: '1px solid var(--color-border)',
+                display: 'flex', alignItems: 'center', gap: '8px',
               }}>
-                {user.email.split('@')[0]} — Dashboard
+                <span style={{
+                  width: '24px', height: '24px', borderRadius: '50%',
+                  background: 'var(--color-brand)', color: '#fff',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '11px', fontWeight: 700, textTransform: 'uppercase',
+                  flexShrink: 0,
+                }}>
+                  {user.email?.[0] || 'U'}
+                </span>
+                <span>{user.email.split('@')[0]} — Dashboard</span>
               </Link>
               <button onClick={handleSignOut} style={{
                 fontFamily: 'var(--font-body)', fontSize: '15px', fontWeight: 500,
