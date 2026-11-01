@@ -11,7 +11,7 @@ Polypath is a structured language learning platform offering step-by-step roadma
 ## Features
 
 - **Language Roadmaps** — Level-by-level learning paths (A1→C2 / N5→N1 / HSK 1→6) with curated resources at each stage
-- **Exam Guides** — Detailed guides for DELE, DELF, JLPT, Goethe-Zertifikat, TOPIK, HSK, and HSKK
+- **Exam Guides** — Dedicated directory with language filters (`/exams`), plus detailed guides for DELE, DELF, JLPT, Goethe-Zertifikat, TOPIK, HSK, and HSKK (`/exams/:id`)
 - **Progress Tracking** — Mark levels as complete and track your journey across all languages
 - **Book Store** — Handpicked book recommendations with Amazon and Flipkart links
 - **User Auth** — Sign up, log in, and save your progress across sessions
@@ -30,12 +30,13 @@ Polypath is a structured language learning platform offering step-by-step roadma
 | ------------------ | --------------------- |
 | Frontend           | React 19 + Vite       |
 | Styling            | Tailwind CSS v4       |
-| Routing            | React Router v6       |
+| Routing            | React Router v7       |
 | State Management   | Zustand               |
 | Data Fetching      | TanStack Query        |
 | Animations         | Framer Motion         |
 | Backend / Database | Supabase (PostgreSQL) |
 | Authentication     | Supabase Auth         |
+| Linter             | Oxlint                |
 | Hosting            | Vercel                |
 | Analytics          | Vercel Analytics      |
 
@@ -48,6 +49,7 @@ Polypath is a structured language learning platform offering step-by-step roadma
 | `/`                      | Landing page with language cards and how it works        |
 | `/languages/:id`         | Language overview — about, timeline, why learn it        |
 | `/languages/:id/roadmap` | Interactive level-by-level roadmap                       |
+| `/exams`                 | Official exam guides directory with language filters     |
 | `/exams/:id`             | Exam guide — structure, prep strategy, recommended books |
 | `/books`                 | Book store with language filters                         |
 | `/dashboard`             | User progress dashboard                                  |
@@ -121,23 +123,21 @@ src/
 │   ├── layout/
 │   │   ├── Navbar.jsx
 │   │   └── Footer.jsx
-│   ├── SEO.jsx
-│   └── AnimatedPage.jsx
-|   └── SearchBar.jsx
-|   └── ScrollToTop.jsx
-|
+│   ├── AnimatedPage.jsx
+│   ├── ScrollToTop.jsx
+│   ├── SearchBar.jsx
+│   └── SEO.jsx
 ├── data/
-│   ├── languages.js
-│   ├── roadmaps.js
+│   ├── books.js
 │   ├── exams.js
-│   └── books.js
+│   ├── languages.js
+│   └── roadmaps.js
+├── hooks/
+│   └── useIsMobile.js
 ├── lib/
+│   ├── search.js
 │   └── supabase.js
-|   └── search.js
 ├── pages/
-│   ├── Home.jsx
-│   ├── NotFound.jsx
-│   ├── Books.jsx
 │   ├── auth/
 │   │   ├── Login.jsx
 │   │   └── SignUp.jsx
@@ -145,9 +145,13 @@ src/
 │   │   └── Dashboard.jsx
 │   ├── exam/
 │   │   └── ExamGuide.jsx
-│   └── language/
-│       ├── LanguageOverview.jsx
-│       └── Roadmap.jsx
+│   ├── language/
+│   │   ├── LanguageOverview.jsx
+│   │   └── Roadmap.jsx
+│   ├── Books.jsx
+│   ├── Exams.jsx
+│   ├── Home.jsx
+│   └── NotFound.jsx
 ├── store/
 │   ├── authStore.js
 │   ├── progressStore.js
