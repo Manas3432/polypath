@@ -36,7 +36,7 @@ export const EXAMS = {
     ],
     usefulLinks: [
       { label: 'Official DELE website', url: 'https://dele.cervantes.es' },
-      { label: 'Free sample papers', url: 'https://www.cervantes.es/lengua_y_ensenanza/certificaciones/dele/informacion_dele.htm' },
+      { label: 'Free sample papers', url: 'https://cervantes.org/es/examenes/dele' },
     ],
     levelRecommendation: 'Most commonly targeted: B2 (for university admission) or C1 (for professional use). Start with B1 if you\'re unsure.',
   },
@@ -160,8 +160,8 @@ export const EXAMS = {
       { title: 'Fit für das Goethe-Zertifikat A2', author: 'Hueber', level: 'A2' },
     ],
     usefulLinks: [
-      { label: 'Official Goethe-Zertifikat website', url: 'https://www.goethe.de/en/spr/kup/prf.html' },
-      { label: 'Free model tests', url: 'https://www.goethe.de/en/spr/kup/prf/prf/gb2/vob.html' },
+      { label: 'Official Goethe-Zertifikat website', url: 'https://www.goethe.de/ins/us/en/spr/prf.html' },
+      { label: 'Free model tests', url: 'https://www.goethe.de/ins/us/en/spr/prf.html' },
     ],
     levelRecommendation: 'B1 for citizenship. B2 for most university admissions. C1 if targeting professional or academic use in Germany.',
   },
@@ -203,7 +203,7 @@ export const EXAMS = {
     ],
     usefulLinks: [
       { label: 'Official TOPIK website', url: 'https://www.topik.go.kr' },
-      { label: 'Free past papers', url: 'https://www.topik.go.kr/usr/cmm/subLocation.do?menuSeq=2110101' },
+      { label: 'Free past papers', url: 'https://www.topikguide.com' },
     ],
     levelRecommendation: 'Level 3–4 (TOPIK II) for university admission. Level 5–6 for competitive scholarships and professional use.',
   },
@@ -243,7 +243,7 @@ export const EXAMS = {
     ],
     usefulLinks: [
       { label: 'Official HSK website', url: 'https://www.chinesetest.cn' },
-      { label: 'Free past papers', url: 'https://www.chinesetest.cn/godownload.do' },
+      { label: 'Free past papers', url: 'https://www.chinesetest.cn' },
     ],
     levelRecommendation: 'HSK 4 is the practical goal for most university and job requirements. HSK 5–6 for competitive scholarships and professional fluency.',
   },

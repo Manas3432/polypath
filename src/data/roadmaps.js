@@ -136,7 +136,7 @@ export const ROADMAPS = {
         description: 'Simple conversations about family, shopping, and familiar topics.',
         skills: ['Passé composé', 'Imparfait intro', 'Vocabulary ~1000 words', 'Negation'],
         resources: [
-          { name: 'Coffee Break French', type: 'Podcast', url: 'https://coffeebreakfrench.com', free: true },
+          { name: 'Coffee Break French', type: 'Podcast', url: 'https://coffeebreaklanguages.com/coffeebreakfrench/', free: true },
           { name: 'Anki French frequency deck', type: 'App', url: 'https://apps.ankiweb.net', free: true },
         ],
       },
@@ -290,7 +290,7 @@ export const ROADMAPS = {
         resources: [
           { name: 'Duolingo German', type: 'App', url: 'https://duolingo.com', free: true },
           { name: 'Language Transfer – German', type: 'Audio', url: 'https://languagetransfer.org', free: true },
-          { name: 'Nicos Weg A1 (Goethe Institut)', type: 'Course', url: 'https://www.dw.com/de/deutsch-lernen/nicos-weg/s-56970', free: true },
+          { name: 'Nicos Weg A1 (Goethe Institut)', type: 'Course', url: 'https://learngerman.dw.com/de/nicos-weg/c-36519789', free: true },
         ],
       },
       {
