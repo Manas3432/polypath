@@ -242,7 +242,7 @@ const Navbar = () => {
     >
       {theme === 'light' ? '🌙 Dark mode' : '☀️ Light mode'}
     </button>
-    <SearchBar onNavigate={() => setMenuOpen(false)} />
+    <SearchBar fullWidth onNavigate={() => setMenuOpen(false)} />
           {NAV_LINKS.map(function(item) {
             return (
               <Link

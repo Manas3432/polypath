@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { searchAll } from '../lib/search'
 
-const SearchBar = ({ onNavigate }) => {
+const SearchBar = ({ onNavigate, fullWidth = false }) => {
   const [query, setQuery] = useState('')
   const [focused, setFocused] = useState(false)
   const navigate = useNavigate()
@@ -17,7 +17,7 @@ const SearchBar = ({ onNavigate }) => {
   }
 
   return (
-    <div style={{ position: 'relative', width: '100%', maxWidth: '180px' }}>
+    <div style={{ position: 'relative', width: '100%', maxWidth: fullWidth ? '100%' : '180px' }}>
       <input
         type="text"
         value={query}

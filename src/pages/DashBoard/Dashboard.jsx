@@ -143,6 +143,7 @@ const Dashboard = () => {
               <h1 style={{
                 fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 4vw, 36px)',
                 fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--color-text-primary)',
+                wordBreak: 'break-word', overflowWrap: 'anywhere',
               }}>
                 {user.email}
               </h1>

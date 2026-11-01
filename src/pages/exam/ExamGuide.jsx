@@ -1,10 +1,12 @@
 import { useParams, Link } from 'react-router-dom'
 import { getExamById } from '../../data/exams'
 import SEO from "../../components/SEO";
+import useIsMobile from '../../hooks/useIsMobile';
 
 const ExamGuide = () => {
   const { examId } = useParams()
   const exam = getExamById(examId)
+  const isMobile = useIsMobile()
 
   if (!exam) {
     return (
@@ -106,7 +108,7 @@ const ExamGuide = () => {
       <div style={{
         maxWidth: '860px', margin: '0 auto',
         padding: 'var(--space-xl) var(--space-lg)',
-        display: 'grid', gridTemplateColumns: '1fr 280px',
+        display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 280px',
         gap: 'var(--space-xl)', alignItems: 'start',
       }}>
 
@@ -273,7 +275,7 @@ const ExamGuide = () => {
         </div>
 
         {/* ── Sidebar ── */}
-        <div style={{ position: 'sticky', top: '80px', display: 'flex', flexDirection: 'column', gap: 'var(--space-md)' }}>
+        <div style={{ position: isMobile ? 'static' : 'sticky', top: '80px', display: 'flex', flexDirection: 'column', gap: 'var(--space-md)' }}>
 
           {/* Level recommendation */}
           <div style={{
