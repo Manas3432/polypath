@@ -63,7 +63,6 @@ const BookCard = ({ book }) => {
       </p>
 
       <div style={{
-        display: 'flex', gap: '8px',
         paddingTop: 'var(--space-md)', borderTop: '1px solid var(--color-border)',
         marginTop: 'auto',
       }}>
@@ -74,30 +73,15 @@ const BookCard = ({ book }) => {
           style={{
             fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 600,
             background: book.colorDim, color: book.colorText,
-            padding: '7px 12px', borderRadius: 'var(--radius-md)',
-            display: 'inline-block', transition: 'opacity 0.15s',
-            textDecoration: 'none', border: '1px solid ' + book.color + '44',
+            padding: '7px 14px', borderRadius: 'var(--radius-md)',
+            display: 'inline-flex', alignItems: 'center', gap: '6px',
+            transition: 'opacity 0.15s', textDecoration: 'none',
+            border: '1px solid ' + book.color + '44',
           }}
           onMouseEnter={function(e) { e.currentTarget.style.opacity = '0.8' }}
           onMouseLeave={function(e) { e.currentTarget.style.opacity = '1' }}
         >
-          Amazon
-        </a>
-        <a
-          href={'https://www.flipkart.com/search?q=' + encodeURIComponent(book.title)}
-          target="_blank"
-          rel="noreferrer"
-          style={{
-            fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 600,
-            background: book.colorDim, color: book.colorText,
-            padding: '7px 12px', borderRadius: 'var(--radius-md)',
-            display: 'inline-block', transition: 'opacity 0.15s',
-            textDecoration: 'none', border: '1px solid ' + book.color + '44',
-          }}
-          onMouseEnter={function(e) { e.currentTarget.style.opacity = '0.8' }}
-          onMouseLeave={function(e) { e.currentTarget.style.opacity = '1' }}
-        >
-          Flipkart
+          Buy on Amazon ↗
         </a>
       </div>
     </div>
