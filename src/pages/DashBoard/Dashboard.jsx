@@ -131,8 +131,7 @@ const Dashboard = () => {
       />
       {/* Header */}
       <div style={{
-        borderBottom: '1px solid var(--color-border)',
-        background: 'var(--color-surface)',
+        background: 'linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%)',
       }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto', padding: 'var(--space-xl) var(--space-lg)' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 'var(--space-md)' }}>

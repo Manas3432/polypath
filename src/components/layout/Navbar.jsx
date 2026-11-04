@@ -37,12 +37,12 @@ const Navbar = () => {
 
   return (
     <header style={{
-  position: 'sticky', top: 0, zIndex: 50,
-  background: 'var(--color-bg)',
-  opacity: 0.95,
-  backdropFilter: 'blur(12px)',
-  borderBottom: '1px solid var(--color-border)',
-}}>
+      position: 'sticky', top: 0, zIndex: 50,
+      background: 'var(--color-bg)',
+      opacity: 0.95,
+      backdropFilter: 'blur(12px)',
+      borderBottom: '1px solid color-mix(in srgb, var(--color-border) 60%, transparent)',
+    }}>
       <nav style={{
         maxWidth: '1120px', margin: '0 auto',
         padding: '0 var(--space-lg)',

@@ -40,8 +40,7 @@ const ExamGuide = () => {
 />
       {/* ── Header ── */}
       <div style={{
-        borderBottom: '1px solid var(--color-border)',
-        background: `linear-gradient(135deg, color-mix(in srgb, ${lc.color} 18%, var(--color-bg)) 0%, var(--color-bg) 60%)`,
+        background: `linear-gradient(180deg, color-mix(in srgb, ${lc.color} 16%, var(--color-bg)) 0%, var(--color-bg) 100%)`,
       }}>
         <div style={{ maxWidth: '860px', margin: '0 auto', padding: 'var(--space-xl) var(--space-lg)' }}>
 

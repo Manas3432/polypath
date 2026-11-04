@@ -159,11 +159,15 @@ const Home = () => {
       />
       {/* ── Hero ── */}
       <section style={{
-        maxWidth: '1120px',
-        margin: '0 auto',
-        padding: 'var(--space-2xl) var(--space-lg)',
-        textAlign: 'center',
+        position: 'relative',
+        background: 'radial-gradient(ellipse 80% 50% at 50% -10%, var(--color-brand-dim) 0%, transparent 70%)',
       }}>
+        <div style={{
+          maxWidth: '1120px',
+          margin: '0 auto',
+          padding: 'var(--space-2xl) var(--space-lg)',
+          textAlign: 'center',
+        }}>
         {/* Eyebrow */}
         <div style={{
           display: 'inline-flex',
@@ -247,6 +251,7 @@ const Home = () => {
             How it works
           </a>
         </div>
+        </div>
       </section>
 
       {/* ── Language Cards ── */}
@@ -288,9 +293,8 @@ const Home = () => {
 
       {/* ── How It Works ── */}
       <section id="how-it-works" style={{
-        background: 'var(--color-surface)',
-        borderTop: '1px solid var(--color-border)',
-        borderBottom: '1px solid var(--color-border)',
+        position: 'relative',
+        background: 'linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 18%, var(--color-surface) 82%, var(--color-bg) 100%)',
       }}>
         <div style={{
           maxWidth: '1120px',

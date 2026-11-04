@@ -102,8 +102,7 @@ const Books = () => {
         description="Curated book recommendations for language learners, organized by language and level."
       />
       <div style={{
-        borderBottom: '1px solid var(--color-border)',
-        background: 'var(--color-surface)',
+        background: 'linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%)',
       }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto', padding: 'var(--space-xl) var(--space-lg)' }}>
           <h1 style={{

@@ -4,9 +4,9 @@ import { LANGUAGES } from '../../data/languages'
 const Footer = () => {
   return (
     <footer style={{
-      borderTop: '1px solid var(--color-border)',
-      background: 'var(--color-surface)',
+      background: 'linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 25%, var(--color-surface) 100%)',
       marginTop: 'auto',
+      paddingTop: 'var(--space-md)',
     }}>
       <div style={{
         maxWidth: '1120px', margin: '0 auto',
@@ -137,7 +137,7 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div style={{
-        borderTop: '1px solid var(--color-border)',
+        borderTop: '1px solid color-mix(in srgb, var(--color-border) 40%, transparent)',
         padding: 'var(--space-md) var(--space-lg)',
         maxWidth: '1120px', margin: '0 auto',
         display: 'flex', justifyContent: 'space-between',

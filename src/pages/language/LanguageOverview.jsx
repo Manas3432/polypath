@@ -29,8 +29,7 @@ const LanguageOverview = () => {
     />
       {/* ── Hero Banner ── */}
       <div style={{
-        borderBottom: '1px solid var(--color-border)',
-        background: `linear-gradient(135deg, color-mix(in srgb, ${lang.color} 18%, var(--color-bg)) 0%, var(--color-bg) 60%)`,
+        background: `linear-gradient(180deg, color-mix(in srgb, ${lang.color} 16%, var(--color-bg)) 0%, var(--color-bg) 100%)`,
       }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto', padding: 'var(--space-xl) var(--space-lg)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: 'var(--space-lg)', fontFamily: 'var(--font-body)', fontSize: '13px', color: 'var(--color-text-muted)' }}>
@@ -229,7 +228,8 @@ const LanguageOverview = () => {
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '16px', fontWeight: 700, marginBottom: 'var(--space-md)', color: 'var(--color-text-primary)' }}>
               Certifications
             </h3>
-            {roadmap.exams.map(function(exam) {
+            {roadmap.exams.map(function(exam, index) {
+              const isLast = index === roadmap.exams.length - 1
               const guideId = (function() {
                 const name = exam.name.toLowerCase()
                 if (name.includes('dele')) return 'dele'
@@ -243,7 +243,11 @@ const LanguageOverview = () => {
               })()
 
               return (
-                <div key={exam.name} style={{ paddingBottom: 'var(--space-md)', marginBottom: 'var(--space-md)', borderBottom: '1px solid var(--color-border)' }}>
+                <div key={exam.name} style={{
+                  paddingBottom: isLast ? 0 : 'var(--space-md)',
+                  marginBottom: isLast ? 0 : 'var(--space-md)',
+                  borderBottom: isLast ? 'none' : '1px solid var(--color-border)',
+                }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
                     <span style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 600, color: lang.color }}>{exam.name}</span>
                     <span style={{ fontFamily: 'var(--font-body)', fontSize: '11px', color: 'var(--color-text-muted)', background: 'var(--color-surface-2)', padding: '2px 8px', borderRadius: '12px' }}>
