@@ -6,12 +6,17 @@ const useAuthStore = create((set) => ({
   loading: true,
 
   init: async () => {
+    supabase.auth.onAuthStateChange((event, session) => {
+      set({ user: session?.user ?? null })
+      if (event === 'PASSWORD_RECOVERY') {
+        if (typeof window !== 'undefined' && window.location.pathname !== '/reset-password') {
+          window.location.replace('/reset-password')
+        }
+      }
+    })
+
     const { data: { session } } = await supabase.auth.getSession()
     set({ user: session?.user ?? null, loading: false })
-
-    supabase.auth.onAuthStateChange((_event, session) => {
-      set({ user: session?.user ?? null })
-    })
   },
 
   signOut: async () => {
